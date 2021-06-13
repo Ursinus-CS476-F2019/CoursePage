@@ -25,3 +25,6 @@
 [submodule "Assignments/Mini3_Shaders"]
 	path = Assignments/Mini3_Shaders
 	url = https://github.com/Ursinus-CS476-F2019/Mini3_Shaders.git
+[submodule "Assignments/LargeScale1_RayTracer"]
+	path = Assignments/LargeScale1_RayTracer
+	url = https://github.com/Ursinus-CS476-F2019/LargeScale1_RayTracer.git
