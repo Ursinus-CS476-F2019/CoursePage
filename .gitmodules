@@ -28,3 +28,6 @@
 [submodule "Assignments/LargeScale1_RayTracer"]
 	path = Assignments/LargeScale1_RayTracer
 	url = https://github.com/Ursinus-CS476-F2019/LargeScale1_RayTracer.git
+[submodule "Assignments/LargeScale2_3DShapeModeling"]
+	path = Assignments/LargeScale2_3DShapeModeling
+	url = https://github.com/Ursinus-CS476-F2019/LargeScale2_3DShapeModeling.git
