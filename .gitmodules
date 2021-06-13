@@ -10,3 +10,9 @@
 [submodule "Materials/SlerpViz"]
 	path = Materials/SlerpViz
 	url = https://github.com/COMPSCI290-S2016/SlerpViz.git
+[submodule "Lectures/CharacterAnimation/FABRIK"]
+	path = Lectures/CharacterAnimation/FABRIK
+	url = https://github.com/Ursinus-CS476-F2019/FABRIK.git
+[submodule "Lectures/CelShading"]
+	path = Lectures/CelShading
+	url = https://github.com/Ursinus-CS476-F2019/CelShading.git
