@@ -1,0 +1,331 @@
+<html>
+
+<head>
+<link rel="shortcut icon" href="#">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--External Libraries!-->
+<!--<script type="text/javascript" src="js/gl-matrix.js"></script>!-->
+<script type="text/javascript" src = "ggslac/jslibs/dat.gui.min.js"></script>
+<script type="text/javascript" src = "ggslac/jslibs/gl-matrix-min.js"></script>
+<script type="text/javascript" src="ggslac/jslibs/webgl-utils.js"></script>
+<script type="text/javascript" src="ggslac/jslibs/webgl-debug.js"></script>
+<script type="text/javascript" src="ammo.js"></script>
+
+
+<!--Our Scripts!-->
+<script src="ggslac/geometry/polymesh.js"></script>
+<script src="ggslac/geometry/basicmesh.js"></script>
+<script src="ggslac/geometry/primitives3d.js"></script>
+<script src="ggslac/geometry/cameras3d.js"></script>
+<script src="ggslac/shaders/shaders.js"></script>
+<script src="ggslac/utils/simpledraw.js"></script>
+<script src="ggslac/utils/blockloader.js"></script>
+<script src="ggslac/viewers/basecanvas.js"></script>
+<script src="ggslac/viewers/scenecanvas.js"></script>
+
+<script src="Particles3D.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<table><tr><td>
+<canvas id="GLCanvas1" style="border: none;" width="1100" height="670"></canvas>
+
+</td>
+</tr>
+<tr>
+    <td>
+        <table cellpadding>
+            <tr>
+                <td>
+                    <button class="button" onClick="history.go(0);">New Game</button>
+                    <h3>Controls</h3>
+                    <ul>
+                        <li><b>Mouse</b>: Click and drag to look around</li>
+                        <li><b>W:</b> Forward</li>
+                        <li><b>S:</b> Backwards</li>
+                        <li><b>A:</b> Left</li>
+                        <li><b>D:</b> Right</li>
+                        <li><b>C:</b> Down</li>
+                        <li><b>Shift:</b> Up</li>
+                        <li><b>R:</b> Zoom out</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+
+
+<script>
+    let glcanvas = document.getElementById("GLCanvas1");
+    glcanvas.addEventListener("contextmenu", function(e){ e.stopPropagation(); e.preventDefault(); return false; }); //Need this to disable the menu that pops up on right clicking
+    SceneCanvas(glcanvas, "ggslac/shaders/", "ggslac/meshes/");
+    glcanvas.repaintOnInteract = false;
+
+
+    // Load the sample scene as a default
+    particles = new Particles();
+
+    /**
+     * Rotating meshes around x,y,z axis on the scene. 
+     * 
+     * @param {object} aroundY rotate around Y-axis
+     * @param {object} aroundX rotate around X-axis
+     * @param {object} aroundZ rotate around Z-axis
+     */
+    function rotateMesh(aroundY, aroundX, aroundZ) {
+        if (aroundX === undefined)
+        {
+            aroundX = 0;
+        }
+        if (aroundZ === undefined)
+        {
+            aroundZ = 0;
+        }
+        let rotate = quat.create();
+        rotate = quat.fromEuler(rotate, aroundX, aroundY, aroundZ);
+        return rotate;
+    }
+
+    /**
+     * Initializing buildings and towers on the main scene.
+     */
+    function initHouseMeshes() {
+        //Houses and apt.
+        particles.hom = particles.addMesh("ggslac/meshes/d/Apt_build.off", [-50, 0.51, -73], [0.05, 0.05, 0.05], [0, 0, 0], 0, 0, "unique");
+        particles.hom = particles.addMesh("ggslac/MedHouse.off", [30, 0.5, 30], [0.03, 0.03, 0.03], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(270));
+        particles.hom = particles.addMesh("ggslac/MBHouse.off", [30, 0.5, 0], [0.03, 0.03, 0.03], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(90, 0, 90));
+        particles.hom = particles.addMesh("ggslac/housemed.off", [30, 15, -25], [1.2, 1.2, 1.2], [0, 0, 0], 1000, 0, "unique", false, false, rotateMesh(-45));
+        //tower
+        particles.tower = particles.addMesh("ggslac/meshes/d/tower.off", [90, 20, -90], [2, 2, 2], [0, 0, 0], 100, 0, "unique", false, false);
+        particles.tower = particles.addMesh("ggslac/meshes/d/projector_mast.off", [80, 15, -80], [5, 5, 5], [0, 0, 0], 100, 0, "rust", false, false);
+        //particles.tower = particles.addMesh("ggslac/meshes/d/tower.off", [90, 20, 90], [2, 2, 2], [0, 0, 0], 100, 0, "unique", false, false);
+        particles.tower = particles.addMesh("ggslac/meshes/d/WaterTower.off", [90, 1, 0], [0.3, 0.3, 0.3], [0, 0, 0], 30, 0, "goldish", false, false);
+        //Wind Mill
+        particles.windmill = particles.addMesh("ggslac/meshes/d/WindMill.off", [50, 0.5, 50], [1.5, 1.5, 1.5], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(225));
+    }
+
+    /**
+     * Initializing fences on the main scene.
+     */
+    function initFences() {
+        //initFenceX = function(mesh, initPosX, initPosY, initPosZ, scale, n, interval, mass, rotation)
+        //City fences
+        particles.initFenceX("ggslac/meshes/d/city_fence.off", [-104, 0.5, -30], [0.02, 0.03, 0.02], 9, 9, 0, rotateMesh(0));
+        particles.initFenceZ("ggslac/meshes/d/city_fence.off", [-13.5, 0.5, -21.5], [0.02, 0.03, 0.02], 7, -9, 0, rotateMesh(90));
+
+        //Old fences
+        particles.initFenceX("ggslac/meshes/d/OldFence.off", [15, 1, -33], [0.04, 0.03, 0.056], 5, 4, 15, rotateMesh(0));
+        particles.initFenceZ("ggslac/meshes/d/OldFence.off", [16.5, 1, -34.5], [0.04, 0.03, 0.056], 5, 4, 15, rotateMesh(90));
+
+        //Metal fences
+        particles.initFenceZ("ggslac/meshes/d/MetalRailing.off", [-5, 0, 68], [1, 1, 1], 5, 3, 5, rotateMesh(90));
+        particles.initFenceZ("ggslac/meshes/d/MetalRailing.off", [-5, 0, 16], [1, 1, 1], 4, 3, 5, rotateMesh(90));
+        particles.initFenceZ("ggslac/meshes/d/MetalRailing.off", [-5, 0, -28], [1, 1, 1], 3, 3, 5, rotateMesh(90));
+
+        //particles.fence = particles.addMesh("ggslac/meshes/d/MetalRailing.off", [5, 0.5, -30], [0.5, 0.5, 0.5], [0, 0, 0], 5, 0.8, "goldish", false, false, rotateMesh(270));
+    }
+
+    /**
+     * Initializing moving tanks on the scene.
+     */
+    function initTanks() {
+        //adding tanks
+        particles.tank = particles.addMesh("ggslac/meshes/d/MC1.off", [-10, 1, 25], [2, 2, 2], [0, 0, 0], 10000, 0, "green", false, false, rotateMesh(0), false, true, true);
+        particles.tank = particles.addMesh("ggslac/meshes/d/MC1.off", [-18, 1, 10], [2, 2, 2], [0, 0, 0], 10000, 0, "green", false, false, rotateMesh(0), false, true, true);
+    }
+
+    /**
+     * Initializing supporting objects to make game looks better.
+     */
+    function initSpheres() {
+        particles.initSpheresXZ(10);
+    }
+
+    /**
+     * Initializing supporting objects to make game looks better.
+     */
+    function initAdds() {
+        //Adding different guns. TODO: randomly throw on game (avoiding build. locations).
+        particles.gun = particles.addMesh("ggslac/SuomiKP31.off", [-20, 2, -34], [2, 2, 2], [0, 0, 0], 0, 0, "gun", false, false, rotateMesh(-45), true, false);
+        particles.gun = particles.addMesh("ggslac/gun2.off", [-15, 2, -34], [0.3, 0.3, 0.3], [0, 0, 0], 0, 0, "gun", false, false, rotateMesh(-45), true, false);
+        particles.gun = particles.addMesh("ggslac/meshes/d/M16.off", [-25, 1.5, -34], [0.02, 0.02, 0.02], [0, 0, 0], 0, 0, "gun", false, false, rotateMesh(-45), true, false);
+        //particles.gun = particles.addMesh("ggslac/meshes/d/Glock19.off", [-10, 1.5, -35], [0.01, 0.01, 0.01], [0, 0, 0], 0, 0, "gun", false, false, rotateMesh(-45), true, false);
+        //particles.gun = particles.addMesh("ggslac/Bullet.off", [3, 2, -35.5], [2, 2, 2], [0, 0, 0], 0, 0, "white", false, false, rotateMesh(-45));
+
+        particles.tachka = particles.addMesh("ggslac/meshes/d/taczki.off", [-60, 3, 70], [0.03, 0.03, 0.03], [0, 0, 0], 10, 0, "goldish");
+
+        particles.randomlyInitWoodenBoxes([70, 5, 70], 2);
+        initSpheres();
+
+        //On the top scenes
+        initTopObjects();
+    }
+
+    /**
+     * Initializing containers as the needed for the game logic.
+     */
+    function initContainers() {
+        particles.containers = particles.addMesh("ggslac/container.off", [30, 0.5, 20], [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(-45));
+        particles.containers = particles.addMesh("ggslac/container.off", [60, 0.5, 70], [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, "unique", false, false);
+        particles.containers = particles.addMesh("ggslac/container.off", [40, 0.5, 70], [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(90));
+
+        //Corner to the front tank pos
+        particles.containers = particles.addMesh("ggslac/container.off", [-15, 0.5, 87], [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(-45));
+        particles.containers = particles.addMesh("ggslac/container.off", [-10, 0.5, 95], [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(100));
+        particles.containers = particles.addMesh("ggslac/container.off", [-23, 0.5, -15], [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(-100));
+        //Corner to the rear tank pos
+        particles.containers = particles.addMesh("ggslac/container.off", [-10, 0.5, -25], [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(45));
+        particles.containers = particles.addMesh("ggslac/container.off", [-7, 0.5, -32], [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(-45));
+
+        //behind tanks
+        particles.containers = particles.addMesh("ggslac/container.off", [-20, 0.5, 80], [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(100));
+        particles.containers = particles.addMesh("ggslac/container.off", [-22, 0.5, 69], [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(90));
+        particles.containers = particles.addMesh("ggslac/container.off", [-23, 0.5, 20], [0.5, 0.5, 0.5], [0, 0, 0], 0, 0, "unique", false, false, rotateMesh(100));
+    }
+
+    /**
+     * Initializing supporting objects on the top scene.
+     */
+    function initTopObjects() {
+        //Part 1
+        particles.addSphere([32, 55, 100], 0.2, [0, 0, 0], 10, 0, "blueambient", true, false, true);
+        particles.randomlyInitWoodenBoxes([0, 60, 80], 2);
+        
+        //Part 2
+        particles.addMesh("ggslac/meshes/d/w_box.off", [100, 55, 100], [3, 3, 3], [0, 0, 0], 15, 0, "goldish", false, false);
+        particles.addMesh("ggslac/meshes/d/w_box.off", [110, 55, 100], [3, 3, 3], [0, 0, 0], 15, 0, "goldish", false, false, rotateMesh(45));
+        particles.addMesh("ggslac/meshes/d/w_box.off", [105, 55, 100], [3, 3, 3], [0, 0, 0], 15, 0, "goldish", false, false);
+        particles.addMesh("ggslac/meshes/d/pallet.off", [90, 55, 100], [0.02, 0.02, 0.02], [0, 0, 0], 15, 0, "goldish", false, false, rotateMesh(45));
+        particles.addMesh("ggslac/meshes/d/pallet.off", [95, 55, 100], [0.02, 0.02, 0.02], [0, 0, 0], 15, 0, "goldish");
+    }
+    
+    /**
+     * Initializing top bases with bridges for the game. 
+     * There are several suporting spheres due to the physicsActives bridges and bases.
+     */
+    function initTopscene() {
+        //Part1
+        //First scene
+        let posof = vec3.create();
+        posof = vec3.fromValues(10, 50, 100);
+        particles.addNewBox(posof, [50, 1, 50], [0, 0, 0], 0, 0.9, "ground", false, false, true, rotateMesh(45), true);
+        particles.addBox(posof, [50, 1, 2], [0, 0, 0], 0, 0.9, "ground", rotateMesh(45));
+        // particles.addBox([-30, 50.5, 95], [50, 1, 2], [0, 0, 0], 0, 0.9, "ground", rotateMesh(45));
+        particles.addBox(posof, [2, 1, 50], [0, 0, 0], 0, 0.9, "ground", rotateMesh(225));
+
+        //Fences on the top scene
+        particles.initFenceXZ("ggslac/meshes/d/city_fence.off", [-30, 50.5, 95], [0.02, 0.03, 0.02], 5, [6.5, 6.5], 0, rotateMesh(-45));
+        particles.initFenceXZ("ggslac/meshes/d/city_fence.off", [-25, 50.5,100], [0.02, 0.03, 0.02], 5, [6.5, -6.5], 0, rotateMesh(225));
+        particles.initFenceXZ("ggslac/meshes/d/city_fence.off", [5 ,50.5, 140], [0.02, 0.03, 0.02], 4, [6.5, -6.5], 0, rotateMesh(45));
+
+        //Second scene with supported spheres.
+        particles.addSphere([100, 50, 100], 1, [0, 0, 0], 0, 0, "ground", false, false, true);
+        particles.addSphere([70, 50, 100], 1, [0, 0, 0], 0, 0, "ground", false, false, true);
+        particles.addSphere([127, 50, 100], 1, [0, 0, 0], 0, 0, "ground", false, false, true);
+        particles.addSphere([100, 50, 127], 1.1, [0, 0, 0], 0, 0, "ground", false, false, true);
+        particles.addNewBox([100, 51, 100], [50, 1, 50], [0, 0, 0], 100, 0.1, "ground", false, false, true, rotateMesh(45));
+
+        //Bulding bridge
+        particles.addSphere([56, 54, 100], 0.1, [0, 0, 0], 0, 0, "ground", false, false, true);
+        particles.addNewBox([55, 56, 100], [28, 0.1, 5], [0, 0, 0], 15, 0.4, "goldish", false, false, true);
+
+        //Part 2
+        //First scene
+        particles.addSphere([110, 20, 58.8], 1, [0, 0, 0], 0, 0, "ground", false, false, true);
+        particles.addSphere([110, 20, 61.2], 1, [0, 0, 0], 0, 0, "ground", false, false, true);
+        particles.addNewBox([110, 21, 60], [25, 0.1, 5], [0, 0, 0], 15, 0.9, "goldish", false, false, true);
+        particles.addMesh("ggslac/meshes/d/w_box.off", [120, 23, 60], [3, 3, 3], [0, 0, 0], 15, 0, "goldish", false, false);
+        particles.addMesh("ggslac/meshes/d/w_box.off", [100, 23, 60], [3, 3, 3], [0, 0, 0], 15, 0, "goldish", false, false);
+    }
+
+    function initLastScene() {
+        particles.addNewBox([200, 10, 0], [50, 1, 50], [0, 0, 0], 0, 0.9, "ground", false, false, true, rotateMesh(0, 0, 10), false);
+        particles.addNewBox([250, 14.5, 0], [51, 1, 50], [0, 0, 0], 0, 0.9, "ground", false, false, true, rotateMesh(0, 0, 0), false);
+    }
+
+    /**
+     * Initializing moving objects
+     */
+    function initMoving() {
+        particles.addNewBox([-85, 5, 60], [20, 4, 7], [0, 0, 0], 1000, 0, "goldish", false, true, true, rotateMesh(0, 90), false);
+    }
+    
+    /**
+     * Initializing the sky with planets and moons.
+     */
+    function initSky() {
+        particles.addSphere([150, 60, 250], 45, [0, 0, 0], 0, 0, "blueambient", false, false, true);
+        particles.addSphere([350, 45, 230], 20, [0, 0, 0], 0, 0, "redish", false, false, true);
+        particles.addSphere([100, 50, 450], 10, [0, 0, 0], 0, 0, "gun", false, false, true);
+        particles.addSphere([150, 60, 250], 5, [0, 0, 0], 0, 0, "gun", true, false, false);
+        particles.addSphere([130, 40, 220], 10, [0, 0, 0], 0, 0, "redambient", true, false, false);
+    }
+
+    /**
+     * Initializing base with the floor, walls and light
+     */
+    function initBase() {
+        //scene floor and walls
+        particles.addBox([0, 0, 0], [200, 1, 200], [0, 0, 0], 0, 0.9, "ground");
+        particles.addBox([0, 3, -100], [200, 6, 1], [0, 0, 0], 0, 0.2, "unique");
+        particles.addBox([0, 3, 100], [200, 6, 1], [0, 0, 0], 0, 0.2, "unique");
+        particles.addBox([100, 3, 0], [1, 6, 200], [0, 0, 0], 0, 0.2, "newunique");
+        particles.addBox([-100, 3, 0], [1, 6, 200], [0, 0, 0], 0, 0.2, "newunique");
+
+        //The middle wall
+        particles.addBox([-5, 2, 50], [1, 3, 40], [0, 0, 0], 0, 0.2, "newunique");
+        particles.addBox([-5, 2, 0], [1, 3, 35], [0, 0, 0], 0, 0.2, "newunique");
+
+        //Supporting/extendent walls
+        particles.addBox([50, 10, 112], [100, 1, 25], [0, 0, 0], 0, 0.9, "ground", rotateMesh(0, -20));
+        particles.addBox([112, 10, 50], [100, 1, 25], [0, 0, 0], 0, 0.9, "ground", rotateMesh(90, 0, 20));
+
+        //One global light
+        particles.glight = particles.addSphere([0, 40, 0], 2.0, [0, 0, 0], 0.0, 0.0, "white", true, false, true, false);
+    }
+
+    /**
+     * Initializing all components
+     */
+    function init() {
+        initBase();
+        initTopscene();
+        // initLastScene();
+        initMoving();
+        initHouseMeshes();
+        initTanks();
+        initFences();
+        initContainers();
+        initAdds();
+        initSky();
+    }
+
+    init();
+
+    particles.cow = particles.addMesh("ggslac/meshes/d/MC1.off", [0, 60, 110], [1, 1, 1], [0, 0, 0], 30, 0, "green", false, false, rotateMesh(180));
+
+    glcanvas.setupScene(particles.scene, glcanvas.clientWidth, glcanvas.clientHeight);
+    glcanvas.drawEdges = false;
+    glcanvas.updateMeshDrawings();
+    particles.setglcanvas(glcanvas);
+    particles.setupListeners();
+
+    function repaint() {
+        particles.animate();
+        glcanvas.repaint();
+        requestAnimationFrame(repaint);
+        
+    }
+
+    requestAnimFrame(repaint);
+    
+    
+</script>
+
+</body>
+</html>
