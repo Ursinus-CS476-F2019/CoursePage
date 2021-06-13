@@ -1,0 +1,12 @@
+[submodule "Materials/EulerAnglesViz"]
+	path = Materials/EulerAnglesViz
+	url = https://github.com/COMPSCI290-S2016/EulerAnglesViz.git
+[submodule "Materials/ggslac"]
+	path = Materials/ggslac
+	url = https://github.com/ctralie/ggslac.git
+[submodule "Materials/JavaScript_MOCAP_Animation"]
+	path = Materials/JavaScript_MOCAP_Animation
+	url = https://github.com/ctralie/JavaScript_MOCAP_Animation.git
+[submodule "Materials/SlerpViz"]
+	path = Materials/SlerpViz
+	url = https://github.com/COMPSCI290-S2016/SlerpViz.git

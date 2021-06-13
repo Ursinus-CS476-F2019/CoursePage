@@ -1,0 +1,4 @@
+*Add vectors showing directions
+*Toggle homogenous coordinates
+*Highlight operation
+*Add examples in dropdown menu
