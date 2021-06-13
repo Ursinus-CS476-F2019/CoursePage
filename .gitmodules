@@ -22,3 +22,6 @@
 [submodule "Assignments/Mini1_GeometricPrimitives/Mini1_GeometricPrimitives_Part2"]
 	path = Assignments/Mini1_GeometricPrimitives/Mini1_GeometricPrimitives_Part2
 	url = https://github.com/Ursinus-CS476-F2019/Mini1_GeometricPrimitives_Part2.git
+[submodule "Assignments/Mini3_Shaders"]
+	path = Assignments/Mini3_Shaders
+	url = https://github.com/Ursinus-CS476-F2019/Mini3_Shaders.git

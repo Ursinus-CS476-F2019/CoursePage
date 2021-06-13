@@ -1,0 +1,21 @@
+    //Plot vectors using vis.js
+    var data = new vis.DataSet();
+    data.add({x:0, y:0, z:0});
+    data.add({x:ux, y:uy, z:uz});
+
+    // specify options
+    var options = {
+        width:  '500px',
+        height: '500px',
+        style: 'line',
+        showPerspective: false,
+        showGrid: true,
+        keepAspectRatio: true,
+        verticalRatio: 1.0
+    };
+
+    // create our graph
+    var container = document.getElementById('projVis');
+    var graph = new vis.Graph3d(container, data, options);
+
+    graph.setCameraPosition(0.4, undefined, undefined);
