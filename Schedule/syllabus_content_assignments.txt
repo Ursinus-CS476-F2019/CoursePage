@@ -1,0 +1,69 @@
+Submit Personal Survey on Microsoft Teams
+
+2019-08-26
+<a href = "../Assignments/Mini1_GeometricPrimitives/index.html">Mini Assignment 1: Geometric Primitives</a> Out
+
+2019-08-28
+<a href = "../Assignments/Mini1_GeometricPrimitives/index.html#part1">Mini Assignment 1: Geometric Primitives Part 1</a> Due
+
+2019-09-04
+Last day to add courses
+
+2019-09-06
+<a href = "../Assignments/Mini1_GeometricPrimitives/index.html#part2">Mini Assignment 1: Geometric Primitives Part 2</a> due
+
+2019-09-13
+<a href = "../Assignments/Mini2_SceneGraphs/">Mini Assignment 2: Scene Graphs</a> Out
+
+2019-09-17
+<a href = "../Assignments/Mini2_SceneGraphs/">Mini Assignment 2: Scene Graphs</a> Due
+
+2019-09-24
+<a href = "../Assignments/Mini3_Shaders/">Mini Assignment 3: Shaders/GLSL</a> Out
+
+2019-09-25
+<a href = "../Assignments/Mini3_Shaders/">Mini Assignment 3: Shaders/GLSL</a> Due
+
+2019-10-02
+<a href = "../Assignments/LargeScale1_RayTracer/">Large Scale Assignment 1: Ray Tracing</a> Out
+
+2019-10-07
+<a href = "../Assignments/LargeScale1_RayTracer/">Large Scale Assignment 1: Ray Tracing</a> Checkin
+
+2019-10-18
+<a href = "../Assignments/LargeScale1_RayTracer/">Ray Tracing</a> Hackathon 4PM - 12AM, IDC 114
+
+2019-10-25
+<a href = "../Assignments/LargeScale1_RayTracer/">Large Scale Assignment 1: Ray Tracing</a> Due
+
+2019-10-30
+Last day to drop courses with a W
+
+2019-10-23
+<a href = "../Assignments/LargeScale2_3DShapeModeling">Large Scale Assignment 2: Mesh Processing</a> Out
+
+2019-10-31
+Midterm Cel Shading Art Contest Due
+
+2019-11-01
+Final Project Out / Form Groups
+
+2019-11-18
+<a href = "../Assignments/LargeScale2_3DShapeModeling">Large Scale Assignment 2: Mesh Processing</a> Due<HR>
+
+2019-11-20
+<a href = "../Assignments/Mini4_EulerAngles">Mini Assignment 4: Euler Angles And Gimbal Lock</a> Out
+
+2019-11-20
+<a href = "../Assignments/Mini4_EulerAngles">Mini Assignment 4: Euler Angles And Gimbal Lock</a> Due
+
+2019-11-24
+Final Project Progress Mini Report Due
+
+2019-11-26
+<a href = "https://github.com/Ursinus-CS476-F2019/ObjectFirstPerspectiveCamera">Viewing Matrices Class Exercise</a>
+
+2019-10-09
+<a href = "https://github.com/Ursinus-CS476-F2019/CelShading">Cel Shading Class Exercise</a>
+
+2019-10-16

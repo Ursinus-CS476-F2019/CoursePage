@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<!-- Header !-->
+	<head>
+		<title>Ursinus CS 476: Computer Graphics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="../assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../assets/css/ie8.css" /><![endif]-->
+        <style>
+        .image_off, #home:hover .image_on{
+           display:none
+        }
+        .image_on, #home:hover .image_off{
+           display:block
+        }
+        </style>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../index.html" class="logo"><strong>Ursinus CS 476: Computer Graphics</strong></a>
+								</header>
+<!-- End Header !-->
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Schedule</h1>
+									</header>
+									<p>
+										Outlined below is the schedule for the course, including lecture topics and assignment due dates.  The specific dates of different topics are subject to change based on the pace at which we go through the course.  <!--It should be possible to cover everything, but if students are struggling with particular important topics, we will take some extra time and cut down on the animation section in the end.  I would rather students learn 80% of the topics well than all of the topics superficially.-->
+									</p>
+
+									<p>
+										The <a href = "../index.html#readings">assigned textbook for the course</a> covers most of the topics we will go over in the class, but I will sometimes add external links to other resources if I feel the textbook is lacking in a particular area, particularly for WebGL/GLSL topics.  At times, I will even write my own little web pages to describe a concept (e.g. for scene graphs).
+									</p>
+									<BR><BR>
+									
+									<center>
+									<table width = "100%" cellpadding = 4>
+									
+									<tr><td>Lecture</td><td><center>Date</center></td><td>Lectures (click for notes)</td><td>Readings/Links</td><td>Assignments/Deliverables</td></tr>
+<tr><td colspan = "5"><h2><b><a name = "primitives">Geometric Primitives</a></b></h2><p>The course will start with an overview of some important mathematical concepts from linear algebra and vector geometry to get everyone on the same page.  These are the basic building blocks that will be used again and again in the rest of the course.  The pace at which we go through this section will adapt to the background knowledge of the students.  We will have two small individual programming assignments in this section to get everyone used to programming with geometry in Javascript.<p><b>Big Concepts And Questions:</b><ul><li>What is numerical geometry?</li><li>How does the quadratic formulat help is with ray object intersections?</li><li>What trick can we use to incorporate both linear operations and translations into a single matrix?  Why do we want to do this?</li></ul></p></p></td></tr>
+<tr><td>1</td><td>Mon 8/26/2019</td><td><a href = "../Lectures/1_Intro/Lecture1_IntroToGraphics.pdf">Course Sneak Preview, Beginning Vectors</a></td><td><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> Chapter 1<!--<BR><a href = "Lectures/Intro/FirstDayQuiz">Background knowledge assessment</a>!--></td><td bgcolor=#f4e6e7>Submit Personal Survey on Microsoft Teams
+</td></tr>
+<tr><td>2</td><td>Wed 8/28/2019</td><td><a href = "../Lectures/2_VectorsIntro">Vectors, Dot Products, Javascript Crash Course</a></td><td>Math Resources:<ul><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 2.3, 2.4</li><li><a href = "https://www.youtube.com/watch?v=Jes5jwLl1q8&list=PL8erL0pXF3JYm7VaTdKDaWc8Q3FuP8Sa7">Calculus Blue</a> 4.1 - 4.3, 5.1 - 5.3, 6.1 - 6.3</li></ul>Javascript Resources<ul><li><a href = "http://www.cs.princeton.edu/courses/archive/spring19/cos426/precepts/01-precept.pdf">Princeton Javascript for Graphics Crash Course</a></li><li><a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Javascript tutorial</a></li><li><a href = "http://www.json.org/">http://www.json.org/</a></li><li><a href = "http://glmatrix.net/docs/">glMatrix library documentation</a></li><li><a href = "https://google.github.io/styleguide/jsguide.html">Google Javascript Style Guide</a> (for what it's worth)</li></ul></td><td bgcolor=#f4e6e7><a href = "../Assignments/Mini1_GeometricPrimitives/index.html">Mini Assignment 1: Geometric Primitives</a> Out
+</td></tr>
+<tr><td>3</td><td>Mon 9/2/2019</td><td>Projection, Normals, Lines, And Planes</td><td><a href = "https://www.youtube.com/watch?v=a06KMRNe6V4">Calculus Blue Parameterized Lines in 3D</a></td><td></td></tr>
+<tr><td>4</td><td>Wed 9/4/2019</td><td>Ray/Sphere Intersections</td><td><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 4.4.1</td><td bgcolor=#f4e6e7><a href = "../Assignments/Mini1_GeometricPrimitives/index.html#part1">Mini Assignment 1: Geometric Primitives Part 1</a> Due
+</td></tr>
+<tr><td></td><td>Fri 9/6/2019</td><td></td><td></td><td bgcolor=#f4e6e7>Last day to add courses
+</td></tr><tr><td>5</td><td>Mon 9/9/2019</td><td>Barycentric Coordinates, Triangle Interior Point Testing, Begin 2D Matrix Transformations</td><td><ul><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 2.7</li><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 6.1 - 6.4 (skip SVD)</li><li><a href = "../Materials/MatrixTransformations">Prof. Tralie's 2D Matrix Transformation Demo Widget</a></li></ul></td><td></td></tr>
+<tr><td>6</td><td>Wed 9/11/2019</td><td>Homogenous Coordinates, Composition of Transformations, Inverses</td><td><ul><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 6.1-6.4</li><li><a href = "https://ncase.me/matrix/">2D Homogenous Coordinates Reactive Demo</a></li></ul></td><td></td></tr>
+<tr><td></td><td>Fri 9/13/2019</td><td></td><td></td><td bgcolor=#f4e6e7><a href = "../Assignments/Mini1_GeometricPrimitives/index.html#part2">Mini Assignment 1: Geometric Primitives Part 2</a> due
+</td></tr><tr><td colspan = "5"><h2><b><a name = "rendering">3D Rendering</a></b></h2><p>In this part of the course, we discuss how to use a computer to generate images of 3D geometric scenes, a process known as "3D rendering."  The ultimate goal of such techniques is to make photorealistic images that look like what a camera might take in the real world, though, as we will see, this is quite challenging.  In the process of attempting to meet this goal, we will think about how light bounces around in the real world and how humans see that light, and we will discuss algorithms that attempt to mimic this.  To this end, students will start off implementing a <a href = "https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">ray tracer</a>, which is a non-realtime rendering technique, but which allows for visually stunning effects with reflection, refraction, and shadows.  We will then talk about the more traditional rendering pipeline, which leads to visually inferior but interactive images.  Students will learn the basics of the <a href = "https://en.wikipedia.org/wiki/WebGL">WebGL</a> / <a href = "https://en.wikipedia.org/wiki/OpenGL_Shading_Language">GLSL</a> Javascript API, which implements this rendering pipeline.<p><b>Big Concepts And Questions:</b><ul><li>What are local coordinates, and what are world coordinates?</li><li>What are we modeling in a "scene" of 3D geometry?</li><li>What kinds of visual effects emerge as light bounces around?</li><li>What can be accomplished with ray tracing that's difficult to accomplish with real time rendering pipelines?</li><li>What kinds of approximations make WebGL rendering fast?</li><li>What challenges emerge in virtual reality compared to monocular rendering?</li></ul></p></p></td></tr>
+<tr><td>7</td><td>Mon 9/16/2019</td><td>3D Matrix Transformations, Normal Transformations, Scene Graphs</td><td><ul><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 6.1-6.4, 6.5, 12.2</li><li><a href = "../Lectures/5_6_LinearAlgebraWeek/3DTransformations.pdf">3D Transformations Slides</a></li><li><a href = "../Materials/ggslac/viewers/SceneViewer.html">Scene Viewer</a></li></ul></td><td></td></tr>
+<tr><td></td><td>Tue 9/17/2019</td><td></td><td></td><td bgcolor=#f4e6e7><a href = "../Assignments/Mini2_SceneGraphs/">Mini Assignment 2: Scene Graphs</a> Out
+</td></tr><tr><td>8</td><td>Wed 9/18/2019</td><td>Scene Graphs Continued</td><td><ul><li><a href = "../Materials/ggslac/viewers/SceneViewer.html">Scene Viewer</a></li></ul></td><td></td></tr>
+<tr><td>9</td><td>Mon 9/23/2019</td><td>Shaders And GLSL</td><td><ul><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> Chapter 18</li><li><a href = "../Lectures/Shaders1.pdf">Slides from today</li><li><a href = "https://github.com/Ursinus-CS476-F2019/Group1_Shaders/commit/2fa478d38f6f9af875cc33f901947a7db2b980cd">Code we wrote today</li><li><a href = "https://en.wikibooks.org/wiki/GLSL_Programming">GLSL Programming WikiBook</a></li><li><a href = "https://www.shadertoy.com/">shadertoy.com</a></li></ul></td><td></td></tr>
+<tr><td></td><td>Tue 9/24/2019</td><td></td><td></td><td bgcolor=#f4e6e7><a href = "../Assignments/Mini2_SceneGraphs/">Mini Assignment 2: Scene Graphs</a> Due
+</td></tr><tr><td>10</td><td>Wed 9/25/2019</td><td>Fractals, Texture Maps, Lambertian/Phong Illumination, Gouraud/Per-Fragment Shading</td><td><ul><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 4.5, 8.2.4 - 8.2.6, 10.1, 10.2, 11.2, 11.3</li><li><a href = "https://en.wikipedia.org/wiki/L-system">Wikipedia Page on L-Systems</li><li><a href = "https://www.cs.uic.edu/~jbell/CourseNotes/ComputerGraphics/SpecialTopics.html">John Bell's Notes on fractals in computer graphics</li><li><a href = "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Using_textures_in_WebGL">Mozilla developer notes on WebGL Texture Mapping</li><li><a href = "https://webglfundamentals.org/webgl/lessons/webgl-3d-textures.html">WebGL Fundamentals Notes on Texture Maps And Mipmapping</a></li><li><a href = "http://www.cs.toronto.edu/~jacobson/phong-demo/">Alec Jacobson's WebGL Illumination/Shading Demo</a></li></ul></td><td bgcolor=#f4e6e7><a href = "../Assignments/Mini3_Shaders/">Mini Assignment 3: Shaders/GLSL</a> Out
+</td></tr>
+<tr><td>11</td><td>Mon 9/30/2019</td><td>GLSL Working Session</td><td></td><td></td></tr>
+<tr><td>12</td><td>Wed 10/2/2019</td><td>3D Perspectives, Ray Tracing Overview, Ray Instancing</td><td><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 4.1 - 4.3, 13.2</td><td bgcolor=#f4e6e7><a href = "../Assignments/Mini3_Shaders/">Mini Assignment 3: Shaders/GLSL</a> Due
+</td></tr>
+<tr><td>13</td><td>Mon 10/7/2019</td><td>Continuing Ray Instancing, Global Illumination (Including Multiple Lights/Shadows)</td><td><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 4.7</td><td bgcolor=#f4e6e7><a href = "../Assignments/LargeScale1_RayTracer/">Large Scale Assignment 1: Ray Tracing</a> Out
+</td></tr>
+<tr><td>14</td><td>Wed 10/9/2019</td><td>Finish Global Illumination (Specular Reflections, Refraction/Transmission), Begin Object-First Viewing</td><td><ul><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 4.8, 13.1, 7.1</li><li><a href = "https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/gluLookAt.xml">gluLookAt</a> documentation</li></ul></td><td bgcolor=#f4e6e7><a href = "https://github.com/Ursinus-CS476-F2019/ObjectFirstPerspectiveCamera">Viewing Matrices Class Exercise</a>
+</td></tr>
+<tr><td>--</td><td>Mon 10/14/2019</td><td>Fall Break</td><td></td><td>Enjoy!</td></tr>
+<tr><td>15</td><td>Wed 10/16/2019</td><td>Perspective Viewing, Hidden Surface Removal / Depth Sorting, Culling, Begin Cel (Toon) Shading</td><td><ul><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> Chapter 7.2, 7.3, 8.2.2, 8.2.3, 8.4, 10.3</li><li><a href = "https://en.wikipedia.org/wiki/Cel_shading">Wikipedia Page on Cel Shading</a></li><li><a href = "https://www.cs.rpi.edu/~cutler/classes/advancedgraphics/S17/final_projects/amy_toshi.pdf">RPI Final Project on Ray Tracing Cel Shading</a></li></ul></td><td bgcolor=#f4e6e7><a href = "https://github.com/Ursinus-CS476-F2019/CelShading">Cel Shading Class Exercise</a>
+</td></tr>
+<tr><td></td><td>Fri 10/18/2019</td><td></td><td></td><td bgcolor=#f4e6e7><a href = "../Assignments/LargeScale1_RayTracer/">Large Scale Assignment 1: Ray Tracing</a> Checkin
+</td></tr><tr><td>16</td><td>Mon 10/21/2019</td><td>Finish Cel Shading Exercise / Bump Maps, Displacement Maps, Shadow Maps</td><td><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 11.4, 11.5, 11.7</td><td></td></tr>
+<tr><td colspan = "5"><h2><b><a name = "shape">3D Shape Representations</a></b></h2><p>Now that we are comfortable rendering basic shapes, we will discuss data structures for representing more complicated custom shapes, which form the backbone of modern CAD and 3D modeling applications.  The first of these is the triangle mesh, which is a discrete approximation of a smooth 2D manifold surface consisting of a collection of triangles connected to each other at a common edge.  We will then discuss continuous representations, including subdivision surfaces and splines.  We will conclude this unit with implicit surfaces, which are volumetric descriptions of surfaces which allow for easy boolean operations and natural design of neat shapes such as water drops.  And as we will see, implicit surfaces lead to a very particular, smooth aesthetic via "metaballs" (not "m<b>ea</b>tballs"!).<p><b>Big Concepts And Questions:</b><ul><li>What is the difference between a discrete and continuous data structure for surfaces?</li><li>What are geometric properties of a triangle mesh, and what are topological properties of a triangle mesh?</li><li>What are the strengths and limitations of different shape representations?</li><li>How many metaballs does one need to design a human head?</li></ul></p></p></td></tr>
+<tr><td>17</td><td>Wed 10/23/2019</td><td>Triangle Mesh Topology: Manifold, Boundary, Euler Characteristic</td><td><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 12.1.1 - 12.1.3</td><td bgcolor=#f4e6e7>Last day to drop courses with a W
+</td></tr>
+<tr><td></td><td>Fri 10/25/2019</td><td></td><td></td><td bgcolor=#f4e6e7><a href = "../Assignments/LargeScale1_RayTracer/">Ray Tracing</a> Hackathon 4PM - 12AM, IDC 114
+</td></tr><tr><td>18</td><td>Mon 10/28/2019</td><td>Mesh Orientation, Mesh Storage Requirements, Basic Mesh Data Structures</td><td><ul><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 12.1.2 - 12.1.3</li><li><a href = "https://www.cc.gatech.edu/~jarek/courses/handouts/meshes.pdf">Additional Reading on Mesh Data Structures</a></li></ul></td><td></td></tr>
+<tr><td>19</td><td>Wed 10/30/2019</td><td>The Half Edge Data Structure, Per-Vertex Normals, Truncation</td><td><ul><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 12.1.4</li><li><a href = "http://kaba.hilvi.org/homepage/blog/halfedge/halfedge.htm">Kalle Rutanen's Half Edge Tutorial</a></li><li><a href = "http://www.bytehazard.com/articles/vertnorm.html">Per-vertex normals notes</a></li></ul></td><td bgcolor=#f4e6e7><a href = "../Assignments/LargeScale1_RayTracer/">Large Scale Assignment 1: Ray Tracing</a> Due
+</td></tr>
+<tr><td></td><td>Thu 10/31/2019</td><td></td><td></td><td bgcolor=#f4e6e7><a href = "../Assignments/LargeScale2_3DShapeModeling">Large Scale Assignment 2: Mesh Processing</a> Out
+</td></tr><tr><td></td><td>Fri 11/1/2019</td><td></td><td></td><td bgcolor=#f4e6e7>Midterm Cel Shading Art Contest Due
+</td></tr><tr><td>20</td><td>Mon 11/4/2019</td><td>Subdivision Surfaces (Guest lecture by <a href = "http://webpages.ursinus.edu/nscoville/">Dr. Nick Scoville</a>)</td><td><a href = "https://mrl.nyu.edu/publications/subdiv-course2000/coursenotes00.pdf">SIGGRAPH 2000 Subdivision Surface Notes</a></td><td></td></tr>
+<tr><td>21</td><td>Wed 11/6/2019</td><td>Intermezzo: Video Game Design Q&A (Guest Lecture by <a href = "https://bigdata.duke.edu/people/steven-espinosa">Steven Espinosa</a>)</td><td><ul><li><a href = "https://learn.unity.com/tutorial/your-first-game">Unity videos on your first game</a>, <a href = "https://www.gamedesigning.org/">https://www.gamedesigning.org/</a></li><li><a href = "https://www.youtube.com/watch?v=_JokM_fExpI">Bill Gates Talking About Windows 95 And The Original Doom</a></li></ul></td><td></td></tr>
+<tr><td>22</td><td>Mon 11/11/2019</td><td>Curves And Splines, Bidirectional Reflectance Distribution Functions (BRDFs)</td><td><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> Chapter 15 (skim)</td><td></td></tr>
+<tr><td>23</td><td>Wed 11/13/2019</td><td>Implicit Surfaces/ Marching Cubes</td><td><ul><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 2.5.3-2.5.5, 16.1.1-16.1.3</li><li> <a href = "https://github.com/Ursinus-CS476-F2019/ImplicitSurfaces">Code from class</a></li><li><a href = "https://www.youtube.com/watch?v=941z56i7QJE">Implicit human minus ellipsoid</a></li></ul></td><td></td></tr>
+<tr><td colspan = "5"><h2><b><a name = "animation">3D Animation</a></b></h2><p>In this section, we will cover some of the basics of 3D animation at a surface level.  This is an incredibly broad field, so we will focus primarily on the math underlying a subset of professional animation tools such as <a href = "https://www.blender.org/">Blender</a> and <a href = "https://www.autodesk.com/products/maya/overview">Maya</a>, rather than the tools themselves.  <p><b>Big Concepts And Questions:</b><ul><li>Explain why "inverse kinematics" are named as such</li></li><li>How does skinning work, and what are its shortcomings?</li><li>What is Gimbal Lock, and what animation scenarios does it adversely impact and how?</li></ul></p></p></td></tr>
+<tr><td>24</td><td>Mon 11/18/2019</td><td>Animation Overview, The Animation Loop, Begin Collision Detection, Final Project Discussion</td><td><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 17.1</td><td bgcolor=#f4e6e7>Final Project Out / Form Groups
+</td></tr>
+<tr><td>25</td><td>Wed 11/20/2019</td><td>Collision Response, Convex Hulls/The Separating Axis Theorem, Begin Euler Angles</td><td></td><td bgcolor=#f4e6e7><a href = "../Assignments/LargeScale2_3DShapeModeling">Large Scale Assignment 2: Mesh Processing</a> Due<HR>
+<a href = "../Assignments/Mini4_EulerAngles">Mini Assignment 4: Euler Angles And Gimbal Lock</a> Out
+</td></tr>
+<tr><td></td><td>Sun 11/24/2019</td><td></td><td></td><td bgcolor=#f4e6e7><a href = "../Assignments/Mini4_EulerAngles">Mini Assignment 4: Euler Angles And Gimbal Lock</a> Due
+</td></tr><tr><td>26</td><td>Mon 11/25/2019</td><td>Finish Euler Angles, Rodrigues' Rotation Formula, Quaternions/SLERP</td><td><ul><li><a href = "../Materials/SlerpViz">Quaternion SLERP Visualization App</a></li><li><a href = "https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Proof_of_the_quaternion_rotation_identity">Wikipedia Derivation of Quaternion Axis/Angle Identity</a></li></ul></td><td></td></tr>
+<tr><td></td><td>Tue 11/26/2019</td><td></td><td></td><td bgcolor=#f4e6e7>Final Project Progress Mini Report Due
+</td></tr><tr><td>--</td><td>Wed 11/27/2019</td><td>Thanksgiving</td><td></td><td>Enjoy!</td></tr>
+<tr><td>27</td><td>Mon 12/2/2019</td><td>Character Animation: Inverse Kinematics, MOCAP, Skinning</td><td><ul><li><a href = "https://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley-dp-1568814690/dp/1568814690/ref=mt_hardcover?_encoding=UTF8&me=&qid=">S/M</a> 17.4</li><li><a href = "../Lectures/CharacterAnimation/FABRIK/forward.html">Forward Kinematics Demo</a></li><li><a href = "http://www.andreasaristidou.com/FABRIK.html">FABRIK Paper</a></li><li><a href = "../Lectures/CharacterAnimation/FABRIK">FABRIK Demo</a></li><li><a href = "http://mocap.cs.cmu.edu/">CMU MOCAP Database</li><li><a href = "../Materials/MOCAPViz">Javascript MOCAP Visualizer</a></li></ul></td><td></td></tr>
+<tr><td>28</td><td>Wed 12/4/2019</td><td>Course Wrap-Up / Raffle</td><td><a href = "../Raffle/index.html">Raffle Prizes</a></td><td></td></tr>
+<tr><td>--</td><td>Wed 12/11/2019</td><td></td><td></td><td bgcolor=#f4e6e7>Final Project Prototype/Video Due</td></tr>
+<tr><td>--</td><td>Sat 12/14/2019</td><td></td><td></td><td bgcolor=#f4e6e7>Final Project Feedback Due</td></tr>
+</table>
+
+
+
+						</div>
+					</div>
+
+<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="../index.html">General</a></li>
+										<li><a href = "../Schedule/index.html">Schedule</a></li>
+										<li>
+											<span class="opener">Assignments</span>
+											<ul>
+												<li><a href = "../Assignments/index.html">Main Assignments Page</a></li>
+												<li>
+													<ul>
+                                                        <li><a href = "../Assignments/Mini1_GeometricPrimitives/index.html">Mini 1: Geometric Primitives</a></li>
+                                                        <li><a href = "../Assignments/Mini2_SceneGraphs/index.html">Mini 2: Scene Graphs</a></li>
+                                                        <li><a href = "../Assignments/Mini3_Shaders/index.html">Mini 3: Shaders/GLSL</a></li>
+                                                        <li><a href = "../Assignments/LargeScale1_RayTracer/index.html">Large 1: Ray Tracing</a></li>
+                                                        <li><a href = "../Assignments/LargeScale2_3DShapeModeling/index.html">Large 2: Polygon Mesh Processing</a></li>
+                                                        <li>
+                                                        <a href = "../Assignments/Mini4_EulerAngles/index.html">Mini 4: Euler Angles</a>
+                                                        </li>
+                                                    </ul>
+												</li>
+											</ul>
+										</li>
+										<li><a href = "../FinalProject/index.html">Final Project</a></li>
+										<li><a href = "../Raffle/index.html">Raffle</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<div class="mini-posts">
+										Announcements	
+										<ul>
+                                            <li>
+                                                <b>2019/11/20:</b> <a href = "../Assignments/Mini4_EulerAngles/index.html">Mini 4: Euler Angles</a> is up!
+                                            </li>
+                                            <li>
+                                                <b>2019/11/19:</b> The <a href = "../Assignments/LargeScale1_RayTracer/ArtContest/index.html">art contest</a> submissions for the ray tracer are up!
+                                            </li>
+                                            <li>
+                                                <b>2019/11/17:</b> The <a href = "../Lectures/CelShading/ArtContest/index.html">art contest</a> submissions the midterm on shading are up!
+                                            </li>
+                                            <li>
+                                                <b>2019/11/17:</b> The <a href = "../Assignments/Mini3_Shaders/ArtContest/index.html">art contest</a> submissions for mini assignment 3 are up!
+                                            </li>
+                                            <li>
+                                                <b>2019/10/30: </b><a href = "../Assignments/LargeScale2_3DShapeModeling/index.html">Large 2: Polygon Mesh Processing</a> is up!
+                                            </li>
+                                            <li>
+                                                <b>2019/10/14:</b> The <a href = "../Assignments/Mini2_SceneGraphs/ArtContest/index.html">art contest</a> submissions for mini assignment 2 are up!
+                                            </li>
+                                            <li>
+                                                <b>2019/10/07</b>: <a href = "../Assignments/LargeScale1_RayTracer/index.html">Large 1: Ray Tracing</a> is up!
+                                            </li>
+                                            <li>
+                                                <b>2019/09/25</b>: <a href = "../Assignments/Mini3_Shaders/index.html">Mini 3: Shaders/GLSL</a> is up!
+                                            </li>
+                                            <li>
+                                                <b>2019/09/17</b>: <a href = "../Assignments/Mini2_SceneGraphs/index.html">Mini 2: Scene Graphs</a> is up!
+                                            </li>
+											<li>
+												<b>2019/08/28</b>: <a href = "../Assignments/Mini1_GeometricPrimitives/index.html">Mini 1: Geometric Primitives</a> is up!
+											</li>
+										</ul>									
+                                    </div>
+								</section>
+
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; <a href = "http://www.ctralie.com">Christopher J. Tralie</a>. All rights reserved.  Contact chris.tralie@gmail.com. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+			
+            <!-- Start of StatCounter Code -->
+            <script type="text/javascript">
+            var sc_project=7309088; 
+            var sc_invisible=1; 
+            var sc_security="f655b56d"; 
+            </script>
+            <script type="text/javascript"
+            src="http://www.statcounter.com/counter/counter.js"></script>
+            <noscript><div class="statcounter"><a title="free hit counter"
+            href="http://statcounter.com/" target="_blank"><img class="statcounter"
+            src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+            counter"></a></div></noscript>
+            <!-- End of StatCounter Code -->
+<!-- End Sidebar !-->
+
+<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/skel.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="../assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../assets/js/main.js"></script>
+<!-- End Scripts -->
+	</body>
+</html>
+
