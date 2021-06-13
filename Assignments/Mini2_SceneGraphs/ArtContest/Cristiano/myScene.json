@@ -1,0 +1,93 @@
+{
+    "name":"testscene",
+    "light1":{
+        "pos":[6.56, 114.30, 62.97],
+        "color":[1, 1, 1]
+    },
+    "camera1":{
+    
+"pos": [-0.16, 0.70, 4.03],
+"rot": [-0.07, -0.01, 0.00, 1.00],
+"fovy": 1.00
+            },
+    "camera2":{
+"pos": [0.11, 30.20, -99.92],
+"rot": [0.00, 0.98, 0.21, 0.00],
+"fovy": 1.00
+            }, 
+    "materials":{
+        "green":{
+            "color":[0.0, 1.0, 0.0]
+        },
+        "red":{
+            "color":[1.0, 0.0, 0.0]
+        },
+        "dark grey":{
+            "color":[0.4,0.4,0.4]
+        },
+        "water":{
+            "color":[0.596,0.8745,0.976]
+        }
+    },
+
+    "children":[{
+        "shapes":[
+                {
+                "type":"box",
+                "length":1,
+                "width":3,
+                "height":1,
+                "center":[0, 0, 3.5]
+                },
+                {
+                "type":"box",
+                "length":220,
+                "width":220,
+                "height":0.01,
+                "center":[0, 0, 0],
+                "material":"green"
+                }
+            ],
+
+            "children":[{
+
+
+            "shapes":[
+                    {
+                    "type":"scene",
+                    "filename":"../Cristiano/myView.json"
+                    },
+                    {
+                    "type":"scene",
+                    "filename":"../Cristiano/myChar1.json"
+                    },
+                    {
+                    "type":"scene",
+                    "filename":"../Cristiano/myChar2.json"
+                    },
+                    {
+                    "type":"scene",
+                    "filename":"../Cristiano/myChar3.json"
+                    },
+                    {
+                    "type":"scene",
+                    "filename":"../Cristiano/myChar4.json"
+                    },
+                    {
+                    "type":"scene",
+                    "filename":"../Cristiano/myCity.json"
+                    },
+                    {
+                    "type":"scene",
+                    "filename":"../Cristiano/myObj.json"
+                    }
+
+                ]
+
+    }]
+
+
+
+    }]
+
+}

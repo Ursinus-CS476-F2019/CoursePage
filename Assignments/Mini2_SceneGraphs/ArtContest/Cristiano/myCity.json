@@ -1,0 +1,163 @@
+{
+    "name":"testscene",
+    "camera1":{
+            "pos": [0.00, 1.50, 5.00],
+            "rot": [0.00, 0.00, 0.00, 1.00],
+            "fovy": 1.00
+            },
+    "camera2":{        
+            "pos": [-0.11, 0.68, -1.26],
+            "rot": [-0.00, 1.00, -0.05, 0.00],
+            "fovy": 1.00
+            }, 
+    "materials":{
+        "green":{
+            "color":[0.0, 1.0, 0.0]
+        },
+        "red":{
+            "color":[1.0, 0.0, 0.0]
+        },
+        "black":{
+            "color":[0.1,0.1,0.1]
+        }
+    },
+
+    "children":[{
+
+    "children":[{
+
+        "shapes":[
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":50,
+                "center":[0, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":60,
+                "center":[-10, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":40,
+                "center":[-20, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":40,
+                "center":[-30, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":80,
+                "center":[-40, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":40,
+                "center":[-50, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":60,
+                "center":[-60, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":120,
+                "center":[-70, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":170,
+                "center":[-80, 0, -100],
+                "material":"black"
+                },
+                
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":60,
+                "center":[10, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":40,
+                "center":[20, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":40,
+                "center":[30, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":80,
+                "center":[40, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":40,
+                "center":[50, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":60,
+                "center":[60, 0, -100],
+                "material":"black"
+                },
+                {
+                "type":"box",
+                "length":10,
+                "width":10,
+                "height":200,
+                "center":[70, 0, -100],
+                "material":"black"
+                }
+            ]
+
+    }] 
+}]
+}

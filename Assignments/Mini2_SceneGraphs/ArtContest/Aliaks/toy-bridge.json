@@ -1,0 +1,78 @@
+{
+  "name": "testscene",
+  "cameras":[
+    {
+        "pos": [1.51, 1.73, 7.77],
+        "rot": [0.16, 0.02, 0.0, 0.99],
+        "fovy": 1.0
+      },
+      {
+        "pos": [1.96, 8.54, 0.6],
+        "rot": [0.66, 0.07, 0.06, 0.75],
+        "fovy": 1.0
+      }
+  ],
+  "lights":[
+      {"pos":[-2, 2, 2]}
+  ],
+  "materials": {
+    "green": {
+      "color": [0.0, 1.0, 0.0]
+    },
+    "red": {
+      "color": [1.0, 0.0, 0.0]
+    },
+    "blue": {
+      "color": [0.0, 0.0, 1.0]
+    }
+  },
+  "children": [
+    {
+      "transform": [0.5, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+      "shapes": [
+        {
+          "type": "cylinder",
+          "radius": 0.4,
+          "height": 2,
+          "center": [1, 0, 0],
+          "material": "red"
+        }
+      ],
+      "children": [
+        {
+          "transform": [0.5, 0, 0, 2, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+          "children": [
+            {
+              "transform": [2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+              "shapes": [
+                {
+                  "type": "box",
+                  "length": 1,
+                  "width": 2,
+                  "height": 0.2,
+                  "center": [0, 0, 0],
+                  "material": "green"
+                }
+              ],
+              "children": [
+                {
+                  "transform": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+
+                  "shapes": [
+                    {
+                      "type": "cylinder",
+                      "radius": 0.4,
+                      "height": 2,
+                      "center": [1, 0, 0],
+                      "material": "blue"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

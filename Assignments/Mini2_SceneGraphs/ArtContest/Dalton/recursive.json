@@ -1,0 +1,41 @@
+{
+    "name":"testscene",
+    "camera1":{           	
+            "pos": [20.79, 26.55, 33.99],
+            "rot": [0.20, -0.30, -0.06, 0.93],
+            "fovy": 1.00
+            },
+    "camera2":{
+            "pos": [0.00, 1.50, -5.00],
+            "rot": [0.00, 1.00, 0.00, 0.00],
+            "fovy": 1.0
+            }, 
+    "children":[
+        {
+            "transform":[1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1],
+            "shapes":[
+                {
+                "type":"scene",
+                "filename": "../scenes/sample-scene.json"
+                }
+            ],
+            "children":[
+                {
+                    "transform":[1, 0, 0, 0,
+                                0, 1, 0, 20,
+                                0, 0, 1, 0,
+                                0, 0, 0, 1],
+                    "shapes":[
+                        {
+                        "type":"scene",
+                        "filename": "../scenes/sample-scene.json"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

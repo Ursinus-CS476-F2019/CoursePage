@@ -1,0 +1,175 @@
+{
+    "name": "pokemonbattlescene",
+    "camera1":{
+        "pos": [7.02, 8.74, 10.23],
+        "rot": [0.21, 0.00, 0.00, 0.98],
+        "fovy": 1.0
+        },
+    "camera2":{
+            "pos": [0.00, 1.50, -5.00],
+            "rot": [0.00, 1.00, 0.00, 0.00],
+            "fovy": 1.0
+            }, 
+    "materials":{
+        "green":{
+            "color":[0.0, 1.0, 0.0]
+        },
+        "red":{
+            "color":[1.0, 0.0, 0.0]
+        },
+        "orange":{
+            "color": [1.0, 0.55, 0.0]
+        },
+        "blue": {
+            "color": [0.0,0.75,1.0]
+        },
+
+        "yellow": {
+            "color": [1.0,1.0,0.0]
+        }
+    },
+
+    "children": [
+        {
+            "transform":[70, 0, 0, 7,
+                0, 70, 0, 0,
+                0, 0, 70, -3,
+                0, 0, 0, 1],
+            "shapes": [
+                {
+                    "type": "mesh",
+                    "filename": "../meshes/square.off",
+                    "material": "green"
+                }
+            ]
+        },
+        {
+            "transform": [0, 0, 1, 0,
+                          0, 1, 0, 0,
+                          -1, 0, 0, 0,
+                          0, 0, 0, 1],
+            "children": [
+                {
+                    "transform": [0.1, 0 ,0 , 0,
+                        0, 0.1, 0, 0,
+                        0, 0, 0.1, 0,
+                        0, 0, 0, 1],
+                        
+                    "shapes": [
+                        {
+                            "type": "mesh",
+                            "filename": "../meshes/Poketrainer.off",
+                            "material": "red"
+                        }
+                    ]
+                } ]
+        },
+
+        {
+            "transform": [3, 0 ,0 , 5,
+                0, 3, 0, 0,
+                0, 0, 3, 0,
+                0, 0, 0, 1],
+            "children": [
+                {
+                    "transform": [0, 0, 1, 0,
+                        0, 1, 0, 0,
+                        -1, 0, 0, 0,
+                        0, 0, 0, 1],
+                    "shapes": [
+                        {
+                            "type": "mesh",
+                            "filename": "../meshes/Charizard.off",
+                            "material": "orange"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "transform": [-1,0,0,15,
+            0,1,0,0,
+            0,0,1,0,
+            0,0,0,1],
+
+            "children": [
+                {
+                    "transform": [0, 0, 1, 0,
+                                  0, 1, 0, 0,
+                                  -1, 0, 0, 0,
+                                  0, 0, 0, 1],
+                    "children": [
+                        {
+                            "transform": [0.1, 0 ,0 , 0,
+                                0, 0.1, 0, 0,
+                                0, 0, 0.1, 0,
+                                0, 0, 0, 1],
+                                
+                            "shapes": [
+                                {
+                                    "type": "mesh",
+                                    "filename": "../meshes/Poketrainer.off",
+                                    "material": "yellow"
+                                }
+                            ]
+                        } ]
+                },
+        
+                {
+                    "transform": [0.15, 0 ,0 , 5,
+                        0, 0.15, 0, 0,
+                        0, 0, 0.15, 0,
+                        0, 0, 0, 1],
+                    "children": [
+                        {
+                            "transform": [0.71, 0, 0.71, 0,
+                                0, 1, 0, 0,
+                                -0.71, 0, 0.71, 0,
+                                0, 0, 0, 1],
+                            "shapes": [
+                                {
+                                    "type": "mesh",
+                                    "filename": "../meshes/blastoise.off",
+                                    "material": "blue"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "transform": [0.002,0,0,12.95,
+                          0,0.002,0,0.7,
+                          0,0,0.002,0.14,
+                          0,0,0,1],
+            "children": [
+                {
+                    "transform": [0, 0, -1, 0,
+                        0, 1, 0, 0,
+                        1, 0, 0, 0,
+                        0, 0, 0, 1],
+                    "children": 
+                    [
+                        {
+                            "transform": [1, 0, 0, 0,
+                                          0, 0.94,-0.34,0,
+                                          0, 0.34,0.94,0,
+                                          0, 0, 0, 1],
+                            "shapes" : 
+                                [
+                                    {
+                                        "type": "mesh",
+                                        "filename": "../meshes/proftralie.off",
+                                        "material": "yellow"
+                                    }
+                                ]
+                        }
+                    ]
+                }
+            ]
+            
+        }
+    ]
+}
+            

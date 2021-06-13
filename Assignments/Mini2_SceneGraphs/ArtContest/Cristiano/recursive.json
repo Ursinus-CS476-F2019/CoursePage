@@ -1,0 +1,49 @@
+{
+    "name":"testscene",
+    "camera1":{
+            "pos": [3.60, 25.49, 32.41],
+            "rot": [0.20, -0.07, -0.02, 0.98],
+            "fovy": 1.00
+            },
+    "camera2":{
+            "pos": [0.00, 1.50, -5.00],
+            "rot": [0.00, 1.00, 0.00, 0.00],
+            "fovy": 1.0
+            }, 
+    "materials":{
+        "green":{
+            "color":[0.0, 1.0, 0.0]
+        },
+        "red":{
+            "color":[1.0, 0.0, 0.0]
+        }
+    },
+    
+    "children":[
+        {
+            "shapes":[
+                {
+                "type":"scene",
+                "filename":"../scenes/sample-scene.json"
+
+                }
+            ]
+    },
+
+    {
+           "transform":[1, 0, 0, 0,
+                         0, 1, 0, 20,
+                         0, 0, 1, 0,
+                         0, 0, 0, 1],
+
+            "shapes":[
+                {
+                "type":"scene",
+                "filename":"../scenes/sample-scene.json"
+                }
+            ]
+    }
+
+
+]
+}

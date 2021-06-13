@@ -1,0 +1,33 @@
+{
+    "name":"yellow_pixel",
+    "camera1":{
+            "pos": [0.0, 6.0, 20],
+            "rot": [0.0, 0.0, 0.0, 1.0],
+            "fovy": 1.00
+            },
+    "camera2":{
+            "pos": [0.00, 1.50, -5.00],
+            "rot": [0.00, 1.00, 0.00, 0.00],
+            "fovy": 1.0
+            }, 
+    "materials":{
+        "yellow":{
+            "color": [1.0, 1.0, 0.0]
+        }
+    },
+    
+    "children":[
+        {  
+            "shapes":[
+                    {
+                    "type":"box",
+                    "length":1,
+                    "width":1,
+                    "height":1,
+                    "center":[0, 0, 0],
+                    "material": "yellow" 
+                    }]
+                  
+        }
+    ]
+}

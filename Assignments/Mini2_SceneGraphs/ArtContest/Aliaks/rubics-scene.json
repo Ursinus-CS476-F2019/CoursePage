@@ -1,0 +1,258 @@
+{
+    "name": "testscene",
+    "camera1": {
+        "pos": [-6.38, 7.64, 16.83],
+"rot": [0.15, 0.23, 0.04, 0.96],
+      "fovy": 1.0
+    },
+    "camera2": {
+        "pos": [2.72, -4.26, 0.22],
+        "rot": [0.46, -0.51, 0.62, -0.38],
+      "fovy": 1.0
+    },
+    "materials": {
+        "green": {
+          "color": [0.0, 1.0, 0.0]
+        },
+        "red": {
+          "color": [1.0, 0.0, 0.0]
+        },
+        "blue": {
+          "color": [0.0, 0.0, 1.0]
+        },
+        "white": {
+          "color": [1.0, 1.0, 1.0]
+        },
+        "yellow": {
+            "color": [1.0, 1.0, 0.0]
+        },
+        "orange": {
+            "color": [1.0, 1.0, 0.0]
+        }
+      },
+    "children": [
+        {
+          "transform": [1, 0, 0, 0, 
+                        0, 1, 0, 0, 
+                        0, 0, 1, 0, 
+                        0, 0, 0, 1],
+          "shapes": [
+            {
+              "type": "scene",
+              "filename": "../Aliaks/rubics-row.json"
+            }
+          ],
+          "children": [
+            {
+              "transform": [1, 0, 0, 0, 
+                            0, 1, 0, 2, 
+                            0, 0, 1, 0, 
+                            0, 0, 0, 1],
+              "shapes": [
+                {
+                  "type": "scene",
+                  "filename": "../Aliaks/rubics-row.json"
+                }
+              ],
+              "children": [
+                  {
+                    "transform": [1, 0, 0, 0, 
+                                  0, 1, 0, -1, 
+                                  0, 0, 1, 2.5, 
+                                  0, 0, 0, 1],
+                    "children": [
+                        {
+                          "transform": [
+                              0.707, 0, 0.707, 0,
+                              0, 1, 0, 0, 
+                              -0.707, 0, 0.707, 0,
+                              0, 0, 0, 1
+                            ],
+                          "shapes": [
+                              {
+                              "type": "scene",
+                              "filename": "../Aliaks/rubics-row.json"
+                              }
+                          ],
+                          "children": [
+                            {
+                              "transform": [1, 0, 0, 0, 
+                                            0, 1, 0, 0, 
+                                            0, 0, 1, 0, 
+                                            0, 0, 0, 1],
+                              "shapes": [
+                                {
+                                  "type": "scene",
+                                  "filename": "../Aliaks/inbetween.json"
+                                }
+                              ],
+                              "children": [
+                                {
+                                  "transform": [1, 0, 0, 0, 
+                                                0, 1, 0, 1, 
+                                                0, 0, 1, 0, 
+                                                0, 0, 0, 1],
+                                  "shapes": [
+                                    {
+                                      "type": "scene",
+                                      "filename": "../Aliaks/inbetween.json"
+                                    }
+                                  ]
+                            }
+                            ]
+                        }
+                        ]
+                    }
+                    ]
+                  }
+              ]
+              
+            }
+          ]
+        },
+        {
+            "children": [
+                {
+                    "shapes": [
+                        {
+                          "type": "scene",
+                          "filename": "../Aliaks/topAndBottom.json"
+                        }
+                      ],
+                      "children": [
+                        {
+                            "transform": [1, 0, 0, 0, 
+                                0, 1, 0, 3, 
+                                0, 0, 1, 0, 
+                                0, 0, 0, 1],
+                            "shapes": [
+                                {
+                                  "type": "scene",
+                                  "filename": "../Aliaks/topAndBottom.json"
+                                  
+                                }
+                              ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "children": [
+                {
+                  "transform": [1, 0, 0, 0, 
+                                0, 1, 0, 1, 
+                                0, 0, 1, 0, 
+                                0, 0, 0, 1],
+                  "shapes": [
+                    {
+                      "type": "scene",
+                      "filename": "../Aliaks/inbetween.json"
+                    }
+                  ],
+                  "children": [
+                    {
+                      "transform": [1, 0, 0, 0, 
+                                    0, 1, 0, 1, 
+                                    0, 0, 1, 0, 
+                                    0, 0, 0, 1],
+                      "shapes": [
+                        {
+                          "type": "scene",
+                          "filename": "../Aliaks/inbetween.json"
+                          
+                        }
+                      ]
+                }
+                ]
+                }
+            ]
+        },
+        {
+            "children": [
+                {
+                  "transform": [5, 0, 0, -0.5, 
+                                0, 5, 0, 2, 
+                                0, 0, 5, -1, 
+                                0, 0, 0, 1],
+                  "shapes": [
+                    {
+                      "type": "mesh",
+                      "filename": "../meshes/shapes/tr_reg_020.off",
+                      "material": "blue"
+                    }
+                  ],
+                  "children": [
+                    {
+                        "transform": [0, 0, 1, 0, 
+                            0, 1, 0, 0, 
+                            -1, 0, 0, 0, 
+                            0, 0, 0, 1],
+                        "children": [
+                            {
+                                    "transform": [1, 0, 0, -1, 
+                                        0, 1, 0, 0, 
+                                        0, 0, 1, 0, 
+                                        0, 0, 0, 1],
+                          "shapes": [
+                              {
+                              "type": "mesh",
+                              "filename": "../meshes/shapes/tr_reg_096.off",
+                              "material": "green"
+                              }
+                          ],
+                          "children": [
+                            {
+                                "transform": [0, 0, 1, 0, 
+                                    0, 1, 0, 0, 
+                                    -1, 0, 0, 0, 
+                                    0, 0, 0, 1],
+                                "children": [
+                                    {
+                                            "transform": [1, 0, 0, -1, 
+                                                0, 1, 0, 0, 
+                                                0, 0, 1, 0, 
+                                                0, 0, 0, 1],
+                                  "shapes": [
+                                      {
+                                      "type": "mesh",
+                                      "filename": "../meshes/shapes/tr_reg_075.off",
+                                      "material": "orange"
+                                      }
+                                  ],
+                                  "children": [
+                                    {
+                                        "transform": [0, 0, 1, 0, 
+                                            0, 1, 0, 0, 
+                                            -1, 0, 0, 0, 
+                                            0, 0, 0, 1],
+                                        "children": [
+                                            {
+                                                    "transform": [1, 0, 0, -1, 
+                                                        0, 1, 0, 0, 
+                                                        0, 0, 1, -0.5, 
+                                                        0, 0, 0, 1],
+                                          "shapes": [
+                                              {
+                                              "type": "mesh",
+                                              "filename": "../meshes/shapes/tr_reg_095.off",
+                                              "material": "red"
+                                              }
+                                          ]
+                                            }
+                                        ]
+                                }
+                                ]
+                                    }
+                                ]
+                        }
+                        ]
+                            }
+                        ]
+                }
+                ]
+            }
+            ]
+        }
+      ]
+}

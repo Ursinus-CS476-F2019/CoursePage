@@ -1,0 +1,180 @@
+{
+    "name":"testscene",
+    "camera1":{
+            "pos": [-0.79, 11.73, 26.11],
+            "rot": [0.10, 0.01, 0.00, 1.00],
+            "fovy": 1.00
+            },
+    "camera2":{
+            "pos": [0.00, 1.50, -5.00],
+            "rot": [0.00, 1.00, 0.00, 0.00],
+            "fovy": 1.0
+            }, 
+    "materials":{
+        "green":{
+            "color":[0.0, 1.0, 0.0]
+        },
+        "red":{
+            "color":[1.0, 0.0, 0.0]
+        },
+        "black": {
+            "color": [0.1, 0.1, 0.1]
+        },
+        "white": {
+            "color": [1.0, 1.0, 1.0]
+        },
+        "purple": {
+            "color": [0.5, 0.0, 0.7]
+        },
+        "orange": {
+            "color": [1, 0.6, 0.0]
+        }
+    },
+    
+    "children":[
+        {
+            "transform":[3, 0, 0, 0,
+                         0, 5, 0, 5,
+                         0, 0, 3, 0,
+                         0, 0, 0, 1],
+            "shapes":[
+                {
+                    "type":"sphere",
+                    "radius": 1,
+                    "center":[0, 0, 0.1],
+                    "material":"white"
+                }
+            ],
+            "children":[
+                { 
+                "transform":[1.2, 0, 0, 0,
+                            0, 1, 0, 0,
+                            0, 0, 1, 0,
+                            0, 0, 0, 1],
+                "shapes":[
+               {
+                   "type":"sphere",
+                   "radius": 2,
+                   "center":[0, 0, 0],
+                   "material":"black"
+               }
+                    ]
+                }
+            ]
+        },
+        {
+            "transform":[0.866, -0.5, 0, 0,
+                        0.5, 0.866, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1],
+        "children": [ 
+            {
+        "transform":[1, 0, 0, 6,
+                    0, 4, 0, 3,
+                    0, 0, 1, -2,
+                    0, 0, 0, 1],
+        "shapes":[
+            {
+                "type":"sphere",
+                "radius": 10,
+                "center":[0, 0, 2],
+                "material":"black"
+            }
+            ]
+            }
+        ]  
+    
+},
+{
+    "transform":[0.866, 0.5, 0, 0,
+                -0.5, 0.866, 0, 0,
+                0, 0, 1, 0,
+                0, 0, 0, 1],
+"children": [ 
+    {
+"transform":[1, 0, 0, -6,
+            0, 4, 0, 3,
+            0, 0, 1, -2,
+            0, 0, 0, 1],
+"shapes":[
+    {
+        "type":"sphere",
+        "radius": 10,
+        "center":[0, 0, 2],
+        "material":"black"
+    }
+    ]
+    }
+]  
+
+},
+        {
+            "transform":[0.018, 0, 0, 1.2,
+                        0, 0.018, 0, 10,
+                        0, 0, 0.018, 19,
+                        0, 0, 0, 1],
+            "shapes":[
+                {
+                "type":"mesh",
+                "filename":"../meshes/proftralie.off",
+                "material":"purple"
+                }
+            ]
+        },
+        
+        {
+            "transform":[2, 0, 0, 2,
+                        0, 2, 0, 1,
+                        0, 0, 5, 2,
+                        0, 0, 0, 2],
+            "children": [ {
+            "transform":[0, 0, 1, 0,
+                        0, 1, 0, 0,
+                        -1, 0, 0, 0,
+                        0, 0, 0, 1],
+            "children": [ {
+            "transform":[0.866, 0.5, 0, 0,
+                        -0.5, 0.866, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1],
+            "shapes":[
+                {
+                "type":"mesh",
+                "filename":"../meshes/triangularPrism.off",
+                "material":"orange"
+                }
+            ]
+        }  
+    ]
+}
+    ]
+},  
+{
+    "transform":[2, 0, 0, -2,
+                0, 2, 0, 1,
+                0, 0, 5, 2,
+                0, 0, 0, 2],
+    "children": [ {
+    "transform":[0, 0, 1, 0,
+                0, 1, 0, 0,
+                -1, 0, 0, 0,
+                0, 0, 0, 1],
+    "children": [ {
+    "transform":[0.866, 0.5, 0, 0,
+                -0.5, 0.866, 0, 0,
+                0, 0, 1, 0,
+                0, 0, 0, 1],
+    "shapes":[
+        {
+        "type":"mesh",
+        "filename":"../meshes/triangularPrism.off",
+        "material":"orange"
+        }
+    ]
+}  
+]
+}
+]
+}
+    ]
+}

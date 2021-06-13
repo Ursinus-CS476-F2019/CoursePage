@@ -1,0 +1,199 @@
+
+{
+
+
+    "name":"testscene",
+   
+    "camera2":{
+            "pos": [0.05, 8.64, 1.15],
+            "rot": [0.12, 0.72, 0.67, 0.13],
+            "fovy": 1.0
+            }, 
+    "camera1":{
+            "pos": [0.05, 1.50, 6.71],
+            "rot": [0.00, 0.00, 0.00, 1.00],
+            "fovy": 1.0
+                },
+    "light1":{
+        "pos":	
+        [0.00, 7.44, -0.05],
+        "color":[1, 1, 1]
+    },
+    "materials":{
+        "green":{
+            "color":[0.0, 1.0, 0.0]
+        },
+        "red":{
+            "color":[1.0, 0.0, 0.0]
+        },
+        "white":{
+            "color": [255.0, 255.0, 255.0]
+        },
+        "yellow":{
+            "color": [255.0, 242.0, 0.0]
+        },
+        "pink":{
+            "color": [45.0, 0.0, 255.0]
+        }
+        
+    },
+    
+    "children":[
+        {
+            "children":[
+                { 
+                    "transform":[1, 0, 0, 0,
+                                 0, 1, 0, 0,
+                                 0, 0, 1, 0,
+                                 0, 0, 0, 1],
+                    "children":[
+                        {
+                            "transform":[2, 0, 0, 0,
+                                        0, 1, 0, 0,
+                                        0, 0, 1, 0,
+                                        0, 0, 0, 1],
+                            "shapes":[
+                                {
+                                "type":"box",
+                                "length":2,
+                                "width":2,
+                                "height":0.2,
+                                "center":[0, 0, 0]
+                                
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "transform":[2, 0, 0, 0,
+                        0, 2, 0, 1,
+                        0, 0, 2, 0,
+                        0, 0, 0, 1],
+            "shapes":[
+                {
+                "type":"mesh",
+                "filename":"../meshes/square.off",
+                "material":"green"
+                }
+            ]
+        },
+
+        {
+            "transform":[1, 0, 0, 0,
+                        0, 1, 0, 2.001,
+                        0, 0, 1.5, 0,
+                        0, 0, 0, 1],
+            "shapes":[
+                {
+                "type":"mesh",
+                "filename":"../meshes/triangle.off",
+                "material":"yellow"
+                }
+            ]
+        },
+
+
+        {
+            "shapes":[
+                
+                {
+                    "type":"cylinder",
+                    "semi-major":0.4,
+                    "semi-minor": 0.2,
+                    "height":2,
+                    "center":[-2, 0, 0],
+                    "material":"red"
+                },
+                {
+                    
+                    "type":"cylinder",
+                    "semi-major":0.4,
+                    "semi-minor": 0.2,
+                    "height":2,
+                    "center":[2, 0, 0],
+                    "material":"red"
+                },
+                {
+                    "type":"cone",
+                    "radius":1,
+                    "height":2,
+                    "center":[0, 0, 0],
+                    "material":"red" 
+                },
+
+                {
+                    "type":"sphere",
+                    "radius":0.5,
+                    "center":[2, 2, 0],
+                    "material":"pink"
+                },
+                {
+                    "type":"sphere",
+                    "radius":0.5,
+                    "center":[-2, 2, 0],
+                    "material":"pink"
+                },
+                {
+                    "type":"cylinder",
+                    "radius":1,
+                    "height":0.001,
+                    "center":[0, 2, 0],
+                    "material":"white"
+                },
+                {
+                    "type":"cylinder",
+                    "radius":0.1,
+                    "height":0.001,
+                    "center":[-0.2, 2.002, 0.6],
+                    "material":"red"
+                },
+                {
+                    "type":"cylinder",
+                    "radius":0.1,
+                    "height":0.001,
+                    "center":[0.3, 2.002, 0.6],
+                    "material":"red"
+                },
+                {
+                    "type":"cylinder",
+                    "radius":0.1,
+                    "height":0.001,
+                    "center":[0.07, 2.002, 0.6],
+                    "material":"red"
+                },
+                {
+                    "type":"cylinder",
+                    "radius":0.1,
+                    "height":0.001,
+                    "center":[0.2, 2.002, 0.2],
+                    "material":"red"
+                },
+                {
+                    "type":"cylinder",
+                    "radius":0.1,
+                    "height":0.001,
+                    "center":[-0.1, 2.002, 0.35],
+                    "material":"red"
+                },
+                {
+                    "type":"cylinder",
+                    "radius":0.1,
+                    "height":0.001,
+                    "center":[0.25, 2.002, -0.01],
+                    "material":"red"
+                },
+                {
+                    "type":"cylinder",
+                    "radius":0.2,
+                    "height":0.001,
+                    "center":[-0.5, 2.002, 0],
+                    "material":"yellow"
+                }
+            ]   
+        }
+    ]
+}

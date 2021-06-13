@@ -1,0 +1,251 @@
+{
+    "name": "testscene",
+    "num": 1,
+    "camera1": {
+        "pos": [-2.34, -1.55, -1.75],
+        "rot": [-0.14, 0.80, -0.21, 0.55],
+      "fovy": 1.0
+    },
+    "camera2": {
+        "pos": [2.72, -4.26, 0.22],
+        "rot": [0.46, -0.51, 0.62, -0.38],
+      "fovy": 1.0
+    },
+    "children": [
+      {
+        "transform": [1, 0, 0, 2, 
+                      0, 1, 0, 0, 
+                      0, 0, 1, 0, 
+                      0, 0, 0, 1],
+        "shapes": [
+          {
+            "type": "box",
+            "length": 0,
+            "width": 1,
+            "height": 1,
+            "center": [0, 0, 0],
+            "material": "blue"
+          }
+        ],
+        "children": [
+            {
+              "transform": [1, 0, 0, 1, 
+                            0, 1, 0, 0, 
+                            0, 0, 1, 0, 
+                            0, 0, 0, 1],
+              "shapes": [
+                {
+                  "type": "box",
+                  "length": 0,
+                  "width": 1,
+                  "height": 1,
+                  "center": [0, 0, 0],
+                  "material": "blue"
+                }
+              ],
+              "children": [
+                {
+                  "transform": [1, 0, 0, 1, 
+                                0, 1, 0, 0, 
+                                0, 0, 1, 0, 
+                                0, 0, 0, 1],
+                  "shapes": [
+                    {
+                      "type": "box",
+                      "length": 0,
+                      "width": 1,
+                      "height": 1,
+                      "center": [0, 0, 0],
+                      "material": "blue"
+                    }
+                  ],
+        "children": [
+          {
+            "transform": [
+                0, 0, 1, 0,
+                0, 1, 0, 0, 
+                -1, 0, 0, 0,
+                0, 0, 0, 1],
+            "children": [
+              {
+                "transform": [
+                    1, 0, 0, -0.5, 
+                    0, 1, 0, 0, 
+                    0, 0, 1, 0.5, 
+                    0, 0, 0, 1],
+                "shapes": [
+                  {
+                    "type": "box",
+                    "length": 0,
+                    "width": 1,
+                    "height": 1,
+                    "center": [0, 0, 0],
+                    "material": "red"
+                  }
+                ],
+                "children": [
+                    {
+                      "transform": [
+                          1, 0, 0, -1, 
+                          0, 1, 0, 0, 
+                          0, 0, 1, 0, 
+                          0, 0, 0, 1],
+                      "shapes": [
+                        {
+                          "type": "box",
+                          "length": 0,
+                          "width": 1,
+                          "height": 1,
+                          "center": [0, 0, 0],
+                          "material": "red"
+                        }
+                      ],
+                      "children": [
+                        {
+                          "transform": [
+                              1, 0, 0, -1, 
+                              0, 1, 0, 0, 
+                              0, 0, 1, 0, 
+                              0, 0, 0, 1],
+                          "shapes": [
+                            {
+                              "type": "box",
+                              "length": 0,
+                              "width": 1,
+                              "height": 1,
+                              "center": [0, 0, 0],
+                              "material": "red"
+                            }
+                          ],
+                          "children": [
+                            {
+                              "transform": [
+                                  0, 0, 1, 0,
+                                  0, 1, 0, 0, 
+                                  -1, 0, 0, 0,
+                                  0, 0, 0, 1],
+                              "children": [
+                                {
+                                  "transform": [
+                                      1, 0, 0, 0.5, 
+                                      0, 1, 0, 0, 
+                                      0, 0, 1, -0.5, 
+                                      0, 0, 0, 1],
+                                  "shapes": [
+                                    {
+                                      "type": "box",
+                                      "length": 0,
+                                      "width": 1,
+                                      "height": 1,
+                                      "center": [0, 0, 0],
+                                      "material": "yellow"
+                                    }
+                                  ],
+                                  "children": [
+                                    {
+                                      "transform": [
+                                          1, 0, 0, 1, 
+                                          0, 1, 0, 0, 
+                                          0, 0, 1, 0, 
+                                          0, 0, 0, 1],
+                                      "shapes": [
+                                        {
+                                          "type": "box",
+                                          "length": 0,
+                                          "width": 1,
+                                          "height": 1,
+                                          "center": [0, 0, 0],
+                                          "material": "yellow"
+                                        }
+                                      ],
+                                      "children": [
+                                        {
+                                          "transform": [
+                                              1, 0, 0, 1, 
+                                              0, 1, 0, 0, 
+                                              0, 0, 1, 0, 
+                                              0, 0, 0, 1],
+                                          "shapes": [
+                                            {
+                                              "type": "box",
+                                              "length": 0,
+                                              "width": 1,
+                                              "height": 1,
+                                              "center": [0, 0, 0],
+                                              "material": "yellow"
+                                            }
+                                          ],
+                                          "children": [
+                                            {
+                                              "transform": [
+                                                  0, 0, 1, 0,
+                                                  0, 1, 0, 0, 
+                                                  -1, 0, 0, 0,
+                                                  0, 0, 0, 1],
+                                              "children": [
+                                                {
+                                                  "transform": [
+                                                      1, 0, 0, -0.5, 
+                                                      0, 1, 0, 0, 
+                                                      0, 0, 1, 0.5, 
+                                                      0, 0, 0, 1],
+                                                  "shapes": [
+                                                    {
+                                                      "type": "box",
+                                                      "length": 0,
+                                                      "width": 1,
+                                                      "height": 1,
+                                                      "center": [0, 0, 0],
+                                                      "material": "green"
+                                                    }
+                                                  ],
+                                                  "children": [
+                                                    {
+                                                      "transform": [
+                                                          1, 0, 0, -1, 
+                                                          0, 1, 0, 0, 
+                                                          0, 0, 1, 0, 
+                                                          0, 0, 0, 1],
+                                                      "shapes": [
+                                                        {
+                                                          "type": "box",
+                                                          "length": 0,
+                                                          "width": 1,
+                                                          "height": 1,
+                                                          "center": [0, 0, 0],
+                                                          "material": "green"
+                                                        }
+                                                      ],
+                                                      "children": [
+                                                        {
+                                                          "transform": [
+                                                              1, 0, 0, -1, 
+                                                              0, 1, 0, 0, 
+                                                              0, 0, 1, 0, 
+                                                              0, 0, 0, 1],
+                                                          "shapes": [
+                                                            {
+                                                              "type": "box",
+                                                              "length": 0,
+                                                              "width": 1,
+                                                              "height": 1,
+                                                              "center": [0, 0, 0],
+                                                              "material": "green"
+                                                            }
+                                                          ]
+                                        }]}]}]}]}
+                                    ]
+                                    }
+                                ]
+                                }
+                            ]
+                    }
+                  ]
+              }]}]}]}]}
+            ]
+          }
+        ]
+      }
+    ]   
+  }
+  

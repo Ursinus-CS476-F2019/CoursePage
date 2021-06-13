@@ -1,0 +1,69 @@
+{
+    "name":"testscene",
+    "camera1":{	
+            "pos": [2.42, 0.22, 0.21],
+            "rot": [0.03, -0.68, -0.03, 0.73],
+            "fovy": 1.00
+            },
+    "camera2":{
+            "pos": [-0.06, 2.91, -0.06],
+            "rot": [0.53, 0.47, 0.52, 0.48],
+            "fovy": 1.00
+            }, 
+    "materials":{
+        "green":{
+            "color":[0.0, 1.0, 0.0]
+        },
+        "red":{
+            "color":[1.0, 0.0, 0.0]
+        }
+    },
+ "children":[
+                { 
+                "transform":[1, 0, 0, 0,
+                            0, 1, 0, 0,
+                            0, 0, 1, 0,
+                            0, 0, 0, 1],
+                        "shapes":[
+                            {
+                            "type":"box",
+                            "length": 2,
+                            "width": 0.4,
+                            "height": 0.2,
+                            "center":[0, 0, 0],
+                            "material": "green"
+                        }
+                    ] 
+                },
+                {
+                    "transform":[1, 0, 0, 0,
+                                0, 1, 0, 0,
+                                0, 0, 2, 1,
+                                0, 0, 0, 1],
+                    "shapes":[
+                        {
+                            "type":"cylinder",
+                            "radius":0.2,
+                            "height":2,
+                            "center":[0, 0, 0],
+                            "material": "red"
+                            }
+                    ]
+                },
+                {
+                    "transform":[1, 0, 0, 0,
+                                0, 1, 0, 0,
+                                0, 0, 2, -1,
+                                0, 0, 0, 1],
+                    "shapes":[
+                        {
+                            "type":"cylinder",
+                            "radius":0.2,
+                            "height":2,
+                            "center":[0, 0, 0],
+                            "material": "red"
+                            }
+                    ]
+                }
+            ]
+}

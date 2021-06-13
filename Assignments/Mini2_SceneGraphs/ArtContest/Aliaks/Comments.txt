@@ -1,0 +1,6 @@
+* Overhead: 2/2 (changed camera in recursive.json)
+* Recursive: 3/3
+* Box: 5/5
+* Toy Bridge: 4/5 (the semi-minor axis was in the x direction instead of the z direction)
+* Art contest: 5/5
+    Amazing work!  You clearly put a lot of effort into this and pushed the engine to the limit!  I particularly like the color coordination with the people models, and the rotations you did there.  It also looks like you exploited "z fighting" (which I'll talk about next week) to an artistic end, so that the cube looks sparling.  It almost looks like a cult worshiping the sparkly rubix cube.  Really impressive work Aliaks!

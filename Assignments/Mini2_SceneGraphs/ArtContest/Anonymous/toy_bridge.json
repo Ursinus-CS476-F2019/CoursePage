@@ -1,0 +1,74 @@
+{
+    "name":"testscene",
+    "camera1":{
+            "pos": [0, 0, 10.0],
+            "rot": [0, 0, 0, 1.0],
+            "fovy": 1.00
+            },
+    "camera2":{
+            "pos": [0.00, 1.50, -5.00],
+            "rot": [0.00, 1.00, 0.00, 0.00],
+            "fovy": 1.0
+            }, 
+    "materials":{
+        "green":{
+            "color":[0.0, 1.0, 0.0]
+        },
+        "red":{
+            "color":[1.0, 0.0, 0.0]
+        }
+    },
+    
+    "children":[
+        {
+            "transform":[1,0,0,0,
+                         0,1,0,0,
+                         0,0,1,0,
+                         0,0,0,1],   
+            "children":[
+                { 
+                "shapes":[
+                    {
+                    "type":"cylinder",
+                    "radius": 1,
+                    "height": 1,
+                    "center":[0, 0, 0]
+                    }],
+                "material": "red",
+                "transform":[0.4, 0, 0, 0,
+                             0, 2, 0, 0,
+                             0, 0, 0.2, 0,
+                             0, 0, 0, 1]     
+                },
+                {
+                "shapes":[
+                    {
+                    "type":"cylinder",
+                    "radius": 1,
+                    "height":1,
+                    "center":[0, 0, 0]
+                    }],
+                    "material":"green",
+                    "transform":[0.4, 0, 0, 2,
+                                0, 2, 0, 0,
+                                0, 0, 0.2, 0,
+                                0, 0, 0, 1]
+                },
+                {
+                "shapes":[
+                    {
+                    "type":"box",
+                    "length":1,
+                    "width":1,
+                    "height":1,
+                    "center":[0, 0, 0]
+                    }],
+                    "transform":[2, 0, 0, 1,
+                                0, 0.25, 0, 0,
+                                0, 0, 0.4, 0,
+                                0, 0, 0, 1]
+                }
+            ]
+        }
+    ]
+}

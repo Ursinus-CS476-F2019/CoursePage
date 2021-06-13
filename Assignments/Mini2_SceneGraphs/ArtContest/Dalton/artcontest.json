@@ -1,0 +1,131 @@
+{
+    "name":"testscene",
+    "camera1":{     	
+            "pos": [0.00, 0.42, 20.75],
+            "rot": [-0.16, -0.01, 0.00, 0.99],
+            "fovy": 1.00
+            },
+    "camera2":{
+            "pos": [0.00, 14.19, 37.05],
+            "rot": [0.10, 0.00, 0.00, 0.99],
+            "fovy": 1.00
+            }, 
+    "light1":{
+        "pos":[-1.84, 16.43, 45.46],
+        "color":[1, 1, 1]
+    },
+    "materials":{
+        "green":{
+            "color":[0.0, 1.0, 0.0]
+        },
+        "red":{
+            "color":[1.0, 0.0, 0.0]
+        },
+        "black": {
+            "color": [0.1, 0.1, 0.1]
+        },
+        "white": {
+            "color": [1.0, 1.0, 1.0]
+        },
+        "purple": {
+            "color": [0.5, 0.0, 0.7]
+        },
+        "orange": {
+            "color": [1, 0.6, 0.0]
+        },
+        "gray": {
+            "color": [0.5, 0.5, 0.5]
+        }
+    },
+"children":[
+    {
+        "transform":[1, 0, 0, 0,
+                    0, 0, -1, 10,
+                    0, 1, 0, -10,
+                    0, 0, 0, 1],
+    "children": [ 
+        {
+    "transform":[200, 0, 0, 0,
+                0, 200, 0, 0,
+                0, 0, 200, 0,
+                0, 0, 0, 1],
+        "shapes": [
+            {
+            "type":"mesh",
+            "filename":"../meshes/square.off",
+            "material":"gray"
+            }
+        ]
+        }
+    ]  
+
+},
+    {
+        "transform":[200, 0, 0, 0,
+                    0, 200, 0, 0,
+                    0, 0, 200, 0,
+                    0, 0, 0, 1],
+        "shapes":[
+            {
+            "type":"mesh",
+            "filename":"../meshes/square.off",
+            "material":"white"
+            }
+        ]
+    },
+    {
+        "transform":[1, 0, 0, 10,
+                    0, 1, 0, 0,
+                    0, 0, 1, 5,
+                    0, 0, 0, 1],
+        "children": [ {
+        "transform":[0.5, 0, -0.866, 0,
+                    0, 1, 0, 0,
+                    0.866, 0, 0.5, 0,
+                    0, 0, 0, 1],            
+        "shapes":[
+            {
+            "type":"scene",
+            "filename": "../Dalton/penguin.json"
+            }
+        ]
+    }
+]
+    },
+    {
+        "transform":[1, 0, 0, -10,
+                    0, 1, 0, 0,
+                    0, 0, 1, 5,
+                    0, 0, 0, 1],
+        "children": [ {
+        "transform":[0.5, 0, 0.866, 0,
+                    0, 1, 0, 0,
+                    -0.866, 0, 0.5, 0,
+                    0, 0, 0, 1],            
+        "shapes":[
+            {
+            "type":"scene",
+            "filename": "../Dalton/penguin.json"
+            }
+        ]
+    }
+]
+    },
+    {
+        "transform":[1, 0, 0, 0,
+                    0, 1, 0, 0,
+                    0, 0, 1, 0,
+                    0, 0, 0, 1],
+        "shapes":[
+            {
+            "type":"scene",
+            "filename": "../Dalton/penguin.json"
+            }
+        ]
+    }
+    ]
+}
+
+
+
+    

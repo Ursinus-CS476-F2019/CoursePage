@@ -1,0 +1,44 @@
+{
+    "name":"testscene",
+    "camera1":{
+            "pos": [0.00, 1.50, 5.00],
+            "rot": [0.00, 0.00, 0.00, 1.00],
+            "fovy": 1.00
+            },
+    "camera2":{        
+            "pos": [-0.11, 0.68, -1.26],
+            "rot": [-0.00, 1.00, -0.05, 0.00],
+            "fovy": 1.00
+            }, 
+    "materials":{
+        "green":{
+            "color":[0.0, 1.0, 0.0]
+        },
+        "red":{
+            "color":[1.0, 0.0, 0.0]
+        },
+        "r_color":{
+            "color":[1.0, 0.84, 0.0]
+        }
+    },
+
+    "children":[{
+          "transform":[0.015, 0, 0, 0,
+                       0, 0.015, 0, 30,
+                       0, 0, 0.015, -100,
+                       0, 0, 0, 1],
+
+
+    "children":[{
+
+        "shapes":[
+                {
+                "type":"mesh",
+                "filename":"../meshes/goalring.off",
+                "material":"r_color"
+                }
+            ]
+
+    }] 
+}]
+}

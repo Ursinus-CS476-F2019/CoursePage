@@ -1,0 +1,46 @@
+{
+    "name":"testscene",
+    "camera1":{
+            "pos": [-15.00, 0.00, -3.50],
+            "rot": [0.08, 0.70, 0.08, 0.71],
+            "fovy": 1.0
+            },
+    "camera2":{
+            "pos": [0.00, 1.50, -5.00],
+            "rot": [0.00, 1.00, 0.00, 0.00],
+            "fovy": 1.0
+            }, 
+    "light1":{
+        "pos":	
+        [-6.65, 12.85, -7.71],
+        "color":[1, 1, 1]
+    },
+    "children":[
+        {
+            "transform":[1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1],
+            "shapes":[
+                {
+                "type":"scene",
+                "filename":"../scenes/sample-scene.json"
+                }
+            ],
+            "children":[
+                        {
+                            "transform":[1, 0, 0, 0,
+                                        0, 1, 2, -2,
+                                        0, 0, 1, 0,
+                                        0, 0, 0, 1],
+                            "shapes":[
+                                {
+                                "type":"scene",
+                                "filename":"../thatGuy/scene1test.json"
+                                }
+                            ]
+                        }
+                ]
+        }
+    ]
+}

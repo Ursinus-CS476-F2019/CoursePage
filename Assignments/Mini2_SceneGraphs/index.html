@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<!-- Header !-->
+	<head>
+		<title>Ursinus CS 476: Computer Graphics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="../../assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
+        <style>
+        .image_off, #home:hover .image_on{
+           display:none
+        }
+        .image_on, #home:hover .image_off{
+           display:block
+        }
+        </style>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>Ursinus CS 476: Computer Graphics</strong></a>
+								</header>
+<!-- End Header !-->
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+                                        <h2>Mini Assignment 2: Scene Graphs (20 Points)</h2>
+                                        <h3>Due Sunday 9/22/2019 at 11:59PM</h3>
+                                        <h3><a href = "ArtContest">Click here</a> to see the art contest results!</h3>
+									</header>
+
+									<div id="page-content">
+										<h3>
+											<ul>
+												<li><a href = "#overview">Overview</a></li>
+                                                <li><a href = "#submission">Submission Instructions</a></li>
+                                                <li><a href = "#syntax">JSON Scene File Syntax</a></li>
+                                                <li><a href = "#scenes">Scenes To Create</a>
+                                                    <ul>
+                                                        <li><a href = "#positioning">Scene 1: Positioning Camera (2 pts)</a></li>
+                                                        <li><a href = "#recursive">Scene 2: Recursive Inclusion (3 pts)</a></li>
+                                                        <li><a href = "#boxes">Scene 3: Rotated Boxes (5 pts)</a></li>
+                                                        <li><a href = "#bridge">Scene 4: Toy Bridge (5 pts)</a></li>
+                                                        <li><a href = "#artcontest">Scene 5: Art Contest! (5 pts)</a></li>
+                                                    </ul>
+                                                </li>
+											</ul>
+										</h3>
+										
+										<h2><a name = "overview">Overview</a></h2>
+										<p>
+										The purpose of this assignment is to familiarize students with the JSON-based scene file format we will be using in the ray tracing assignment.  In particular, students will be making a variety of scenes to test their knowledge of scene graphs and of 4x4 transformation matrices.  The assignment will culminate in the first art contest of our class, in which students design their own scenes out of the basic building blocks that exist in the engine.
+										</p>
+										
+										<h3>Getting Started</h3>
+										<p>
+										You will be writing a series of JSON scene files in this assignment.  It is possible to everything (except for possibly the art contest) by writing and uploading your scene files to <a href = "../../Materials/ggslac/viewers/SceneViewer.html">the scene viewer</a> from the course web site.  However, for the art contest and also to prepare for future assignments in this class, you will need to run some code from a local web server on your computer to prevent <a href = "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors">Cross-Origin Errors</a> form happening when the engine loads shaders and other resources.  To get this setup, please follow the instructions below.
+                                        </p>
+                                        
+                                        <ol>
+                                            <li>
+                                                <p>
+                                                    Clone or download the <a href = "https://github.com/ctralie/ggslac">ggslac repository</a>, which contians an engine that Dr. Tralie made for this class, and which you will be using to render and interact with scene files.
+                                                </p>
+                                            </li>
+
+                                            <li>
+                                                <a name = "pythonserver">Local Web Server</a><BR>
+                                                Download and install Python on your machine if you don't already have it.  If you are installing Python for the first time, it is recommended that you use <a href = "https://www.anaconda.com/distribution/">Python 3.7 from Anaconda</a>.  Once you have Python installed, open up your console and navigate to the root of the <code>ggslac</code> directory.  Then type
+                                                <p>
+                                                <code>
+                                                    python -m http.server
+                                                </code>
+                                                </p>
+
+                                                Or if you have Python 2 as your default Python installation (<a href = "https://pythonclock.org/">God help you</a>), type
+                                                <p>
+                                                <code>
+                                                    python -m SimpleHTTPServer
+                                                </code>
+                                                </p>
+
+                                                <p>
+                                                By default, this will provide access to your code on port 8000 on your local machine, so you would go to the link <a href = "http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> to run your code.  <b>Please post on Microsoft Teams if you are having trouble with this</b>
+                                                </p>
+                                                
+                                            </li>
+
+                                            <li>
+                                                <p>
+                                                    Navigate to the <code>viewers/SceneViewer.html</code> file.  This will launch the interface from which you can load your scene files.
+                                                </p>
+                                            </li>
+                                        </ol>
+										
+										
+										<h2><a name = "submission">Submission Instructions</a></h2>
+										
+										You will submit all of your scene files to Canvas when you are finished.  Please also submit a <b><code>README.txt</code></b> file with both submissions with the following information each time:
+										<ol>
+                                        <li>Your name<BR><BR></li>
+                                        <li>One of the two statements below
+                                            <ol>
+                                                <li>
+                                                    "I consent to have my art contest submission posted publicly on the class web site.  My name/pseudonym for public display is <u>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp.</u>
+                                                </li>
+                                                <li>
+                                                    "I do not wish to post my art contest submission publicly"
+                                                </li>
+                                            </ol>
+
+                                        </li>
+                                        <li>A one or two sentence description of your art contest submission.</li>
+										<li>Approximately how many hours it took you to finish this assignment (<i>I will not judge you for this at all...I am simply using it to gauge if the assignments are too easy or hard</i>)<BR><BR></li>
+										<li>Your overall impression of the assignment.  Did you love it, hate it, or were you neutral?  One word answers are fine, but if you have any suggestions for the future let me know.<BR><BR></li>
+										
+										<li>Any other concerns that you have.</li>
+										</ol>
+                                        
+                                        
+										<HR>
+                                            <h2><a name = "syntax">JSON Scene File Syntax</a></h2>
+                                            The scene files are written in JSON syntax, and they specify a tree structure.  Each node in the tree has the following three fields
+                                            <ol>
+                                                <li><b><u>transform:</u></b>
+                                                    <p>
+                                                        Every node in the scene graph has a 4x4 transform matrix associated to it, which describes where to place it relative to its parent's coordinate system.  The entire subtree will be transformed by this matrix on the left.  If no matrix is provided, the identity matrix is assumed
+                                                    </p>
+                                                    </li>
+                                                    <li>
+                                                        <b><u>shapes:</u></b>
+                                                        <p>
+                                                            Every node can contain a set of shapes (if this field is not specified, then there are no shapes, and this is a "dummy node").  The possible shapes, with their possible additional parameters, are described below:
+                                                        </p>
+                                                        <ul>
+                                                            <li><b>box</b>, with parameters "width" (number), "height" (number), "length" (number) and "center" (list of 3 numbers xyz).  The default box is 1x1x1, centered at (0, 0, 0)</li>
+                                                            <li><b>polygon</b>, with a single parameter "vertices", which is a list of 3-element lists, each of which is a vertex on the polygon.  Vertices are specified in CCW order with respect to the polygon normal.</li>
+                                                            <li><b>cylinder</b>, with parameters "radius" (number), "height" (number), and "center" (list of 3 numbers xyz).  The default cylinder has radius 1 and height 1, centered at (0, 0, 0).</li>
+                                                            <li><b>cone</b>, with parameters "radius" (number), "height" (number), and "center" (list of 3 numbers xyz).  The default cone has radius 1 and height 1, with its base centered on (0, 0, 0).</li>
+                                                            <li><b>sphere</b>, with parameters "radius" (number) and "center" (list of 3 numbers xyz).  The default sphere has radius 1 and is centered at (0, 0, 0).</li>
+                                                            <li><b>mesh</b>, with parameter "filename" (string), which is a path to the triangle mesh stored as a .off file.  The path is relative to the directory from which the viewer is being run.</li>
+                                                            <li><b>scene</b>, with parameter "filename" (string), which is a path to another JSON scene file, which should be recursively included as a child of this node.  The path is relative to the directory from which the viewer is being run.</li>
+                                                        </ul>
+
+                                                        <p>
+                                                            Note that each shape also has a "material" field, which points to a material defined at the top of the JSON file
+                                                        </p>
+                                                        </li>
+
+
+                                                <li>
+                                                    <b><u>children:</u></b>
+                                                    <p>
+                                                    Every node can have a list of children, which is a list of other nodes that are included below it in the tree.  If no list is provided, then this node doesn't have any children, and it is a "leaf node."
+                                                    </p>
+                                                </li>
+
+
+                                            </ol>
+                                            
+                                            The <a href = "https://github.com/ctralie/ggslac/blob/master/scenes/sample-scene.json">sample.scene.json</a> file bundled with ggslac is a fairly comprehensive example of the possibilities (<a href = "../../Materials/ggslac/viewers/SceneViewer.html">Click here</a> to view this scene interactively).  An annotated screenshot of the code is shown below, with the resulting scene tree superimposed on the right.  We make the following observations about this example:
+                                            
+                                            <ul>
+                                                <li>Node 2 is a "dummy node," as it has no shapes associated to it; it only has a transformation (45 degree rotation about y and a translation by 2 in the +x direction).  So it is merely used to transform the shapes below it, not to include any shapes of its own.</li>
+
+                                                <li>
+                                                    Node 3 contains a unit cube, which it scales by 2x in the x direction to turn it into a 2x1x1 rectangular prism.  To further continue up the tree to world coordinates, it is then rotated by 45 degrees about y, translated by 2 in +x, and translated by 0.5 in +y.  (Note that flipping the rotation in node 2 with the scale in node 3 would actually end up shearing the shape).
+                                                </li>
+
+                                                <li>
+                                                    Nodes 3, 4, 5, and 6 are all "leaf nodes," as they have no children, so the tree stops there.
+                                                </li>
+
+                                                <li>
+                                                    Node 6 actually contains 3 shapes, but no transformation is specified, <i>so the identity matrix is assumed for all of them</i>.  To place the shapes at different positions and to scale them in different directions, we actually rely on the shape parameters (center, radius, height) instead of transformation matrices.  Though one could accomplish the translation and scaling with a matrix as well.
+                                                </li>
+                                            </ul>
+                                            <BR><BR>
+
+
+                                            <img src = "sample-scene.svg">
+
+                                            <h3>Other Tips:</h3>
+                                            <ul>
+                                                <li>
+                                                    It is recommended that you include tabs consistently to help you see what nodes are at the same depth in the tree.
+                                                </li>
+                                                <li>
+                                                    <b>Be sure to use double quotes for all fields</b>, as per the JSON spec!  You will receive an alert popup if you have improperly formatted JSON.  <i>You should use Microsoft Visual Studio Code or some other editor that recognizes the .json extension to help you with the syntax.</i>
+                                                </li>
+                                            </ul>
+                                            
+
+                                            
+
+										<HR>
+										<h2><a name = "scenes">Scenes To Create</a></h2>
+
+                                        <p>
+                                            Below are scenes that you will create.
+                                        </p>
+
+										<h2><a name = "positioning">Task 1: Positioning Camera (2 pts)</a></h2>
+                                        
+                                        <p>
+                                            Modify the first camera in <a href = "../../Materials/ggslac/scenes/sample-scene.json">sample.scene.json</a> so that it is looking from overhead by default when loaded.  Make it so that the cylinder and cone are to the left, the two boxes are to the right, and nothing else is in view, as shown below (no need to get it exact, but get as close as you can).  Save as a file called <code>overhead.json</code>, which you will submit. (<b>Hint: </b> expand the cameras menu to see the position and rotation of the camera)
+                                        </p>
+                                        <img src = "Overhead.png">
+                                        
+
+										<!--<div id = "tips">
+											<b>Tips:</b>
+											<ul>
+											<li>Write the code for parallel projection first, then see if you can call that function to help with perpendicular projection.</li>
+											</ul>
+										</div>-->
+
+                                        <BR><BR>
+                                        <h2><a name = "recursive">Scene 2: Recursive Inclusion (3 pts)</a></h2>
+
+                                        <p>
+                                        Create a scene file called <code>recursive.json</code> that recursively includes <code>sample-scene.json</code> twice: once at its original position, and another time at exactly 20 units above its original position.  <i>Be sure that the path to <code>sample-scene.json</code> is relative to where <code>SceneViewer.html</code> is being run</i>!  In particular, if you don't move SceneViewer.html, then the path should be <code>../scenes/sample-scene.json</code>.  If this works properly, you should see something like below:
+                                        </p>
+
+                                        <img src = "Recursive.png">
+
+                                        <BR><BR>
+                                            <h2><a name = "boxes">Scene 3: Rotated Boxes (5 pts)</a></h2>
+
+                                            <p>
+                                            Create a scene called <code>boxes.json</code> that contains one box directly on top of one another. The box on top should have half the width/length/height of the box on the bottom, and it should be <i>rotated 45 degrees</i>.  The picture below shows what the final result should look like:
+                                            </p>
+
+
+                                            <div id = "tips">
+                                                <b>Hint:</b>
+                                                <ul>
+                                                <li>The second box should be rotated about the y-axis.</li>
+                                                </ul>
+                                            </div>
+
+                                            <img src = "Boxes.png">
+
+                                        <BR><BR>
+                                            <h2><a name = "bridge">Scene 4: Toy Bridge (5 pts)</a></h2>
+                                            Create a scene with two ellipsoidal cylinders and a rectangular box between them that looks like a simple bridge.  Specifically, you should do the following
+                                            <ul>
+                                                <li>Create two cylinders with ellipsoidal cross-sections.  The semi-major axis should be 0.4, and the semi-minor axis should be 0.2.</li>
+
+                                                <li>
+                                                    The cylinders should each be 2 units tall, and their centers should be 2 units apart along the semi-major axis.
+                                                </li>
+
+                                                <li>
+                                                    You should place a box which extends from the center of one to the center of the other, and which is much thinner than it is wide.
+                                                </li>
+                                            </ul>
+
+                                            <p>
+                                            See the picture below for two different views of this (don't worry about the colors)
+                                            </p>
+
+                                            <div id = "tips">
+                                                <b>Hint:</b> To turn a cylinder with circular cross-sections into a cylinder with ellipsoidal cross-sections, you will have to scale across some axis, in much the same way that you turn a sphere into an ellipsoid.
+                                            </div>
+
+                                            <h3>Front View</h3>
+                                            <img src = "BridgeFront.png">
+
+                                            <h3>Top View</h3>
+                                            <img src = "BridgeTop.png">
+
+                                        <BR><BR>
+                                            <h2><a name = "artcontest">Scene 5: Art Contest! (5 pts)</a></h2>
+                                            Design your own scene, making creative use of the components available to you in the engine.  <b>The winner of the art contest will receive 5 extra credit points</b>.  The judges will be me and the other professors in Math/CS, with the names anonymized during judging.  To receive full credit, you must satisfy the following parameters:
+                                            <ul>
+                                                <li>The submission should include at least two scene files, with one included in the other</li>
+                                                <li>The scene graph must have a depth of at least two somewhere (one child of a child)</li>
+                                            </ul>
+
+
+                                            <div id = "tips">
+                                                To spice things up, you might want to include some meshes from outside.  <a href = "https://github.com/ctralie/TDALabs/tree/master/shapes">Click here</a> to view a collection of human bodies in different poses, and <a href = "https://github.com/ctralie/TDALabs/tree/master/shapes_nonrigid">click here</a> to view a bunch of animals in different poses.  To view the meshes before you include them, you can use the <a href = "../../Materials/ggslac/viewers/SimpleMeshViewer.html">the mesh viewer</a> bundled with the engine.  If you want to find a mesh somewhere else on the Internet that isn't in .off file format, you can use <a href = "http://www.meshlab.net/">meshlab</a> to do the conversion.
+                                            </div>
+
+                                            
+
+                                    </div>
+						</div>
+					</div>
+
+					<!--LaTeX in Javascript!-->
+					<script src="../../../../jsMath/easy/load.js"></script>
+					<!--Syntax highlighting in Javascript!-->
+					<script type="text/javascript" src="../../../../syntaxhighlighter/scripts/shCore.js"></script>
+					<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+					<script type="text/javascript" src="../../../../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+					<script type="text/javascript" src="../../../../syntaxhighlighter/scripts/shBrushMatlabSimple.js"></script>
+					<script type="text/javascript" src="../../../../syntaxhighlighter/scripts/shBrushPython.js"></script>
+					<link type="text/css" rel="stylesheet" href="../../../../syntaxhighlighter/styles/shCoreDefault.css"/>
+					<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="../../index.html">General</a></li>
+										<li><a href = "../../Schedule/index.html">Schedule</a></li>
+										<li>
+											<span class="opener">Assignments</span>
+											<ul>
+												<li><a href = "../../Assignments/index.html">Main Assignments Page</a></li>
+												<li>
+													<ul>
+                                                        <li><a href = "../../Assignments/Mini1_GeometricPrimitives/index.html">Mini 1: Geometric Primitives</a></li>
+                                                        <li><a href = "../../Assignments/Mini2_SceneGraphs/index.html">Mini 2: Scene Graphs</a></li>
+                                                        <li><a href = "../../Assignments/Mini3_Shaders/index.html">Mini 3: Shaders/GLSL</a></li>
+                                                        <li><a href = "../../Assignments/LargeScale1_RayTracer/index.html">Large 1: Ray Tracing</a></li>
+                                                        <li><a href = "../../Assignments/LargeScale2_3DShapeModeling/index.html">Large 2: Polygon Mesh Processing</a></li>
+                                                        <li>
+                                                        <a href = "../../Assignments/Mini4_EulerAngles/index.html">Mini 4: Euler Angles</a>
+                                                        </li>
+                                                    </ul>
+												</li>
+											</ul>
+										</li>
+										<li><a href = "../../FinalProject/index.html">Final Project</a></li>
+										<li><a href = "../../Raffle/index.html">Raffle</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<div class="mini-posts">
+										Announcements	
+										<ul>
+                                            <li>
+                                                <b>2019/12/14: </b>The <a href = "../../Assignments/LargeScale2_3DShapeModeling/ArtContest/index.html">art contest</a> submissions for the mesh processing assignment are up!
+                                            </li>
+                                            <li>
+                                                <b>2019/11/20:</b> <a href = "../../Assignments/Mini4_EulerAngles/index.html">Mini 4: Euler Angles</a> is up!
+                                            </li>
+                                            <li>
+                                                <b>2019/11/19:</b> The <a href = "../../Assignments/LargeScale1_RayTracer/ArtContest/index.html">art contest</a> submissions for the ray tracer are up!
+                                            </li>
+                                            <li>
+                                                <b>2019/11/17:</b> The <a href = "../../Lectures/CelShading/ArtContest/index.html">art contest</a> submissions the midterm on shading are up!
+                                            </li>
+                                            <li>
+                                                <b>2019/11/17:</b> The <a href = "../../Assignments/Mini3_Shaders/ArtContest/index.html">art contest</a> submissions for mini assignment 3 are up!
+                                            </li>
+                                            <li>
+                                                <b>2019/10/30: </b><a href = "../../Assignments/LargeScale2_3DShapeModeling/index.html">Large 2: Polygon Mesh Processing</a> is up!
+                                            </li>
+                                            <li>
+                                                <b>2019/10/14:</b> The <a href = "../../Assignments/Mini2_SceneGraphs/ArtContest/index.html">art contest</a> submissions for mini assignment 2 are up!
+                                            </li>
+                                            <li>
+                                                <b>2019/10/07</b>: <a href = "../../Assignments/LargeScale1_RayTracer/index.html">Large 1: Ray Tracing</a> is up!
+                                            </li>
+                                            <li>
+                                                <b>2019/09/25</b>: <a href = "../../Assignments/Mini3_Shaders/index.html">Mini 3: Shaders/GLSL</a> is up!
+                                            </li>
+                                            <li>
+                                                <b>2019/09/17</b>: <a href = "../../Assignments/Mini2_SceneGraphs/index.html">Mini 2: Scene Graphs</a> is up!
+                                            </li>
+											<li>
+												<b>2019/08/28</b>: <a href = "../../Assignments/Mini1_GeometricPrimitives/index.html">Mini 1: Geometric Primitives</a> is up!
+											</li>
+                                            <li>
+                                                Special shoutout to Aliaks Hlakdou for an <a href = "../../FinalProject/Aliaks/particles3d.html">amazing final project</a>
+                                            </li>
+										</ul>									
+                                    </div>
+								</section>
+
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; <a href = "http://www.ctralie.com">Christopher J. Tralie</a>. All rights reserved.  Contact chris.tralie@gmail.com. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+			
+            <!-- Start of StatCounter Code -->
+            <script type="text/javascript">
+            var sc_project=7309088; 
+            var sc_invisible=1; 
+            var sc_security="f655b56d"; 
+            </script>
+            <script type="text/javascript"
+            src="http://www.statcounter.com/counter/counter.js"></script>
+            <noscript><div class="statcounter"><a title="free hit counter"
+            href="http://statcounter.com/" target="_blank"><img class="statcounter"
+            src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+            counter"></a></div></noscript>
+            <!-- End of StatCounter Code -->
+<!-- End Sidebar !-->
+
+<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="../../assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../../assets/js/main.js"></script>
+<!-- End Scripts -->
+	</body>
+</html>

@@ -1,0 +1,66 @@
+{
+    "name":"bridgescene",
+    "camera1":{
+            "pos": [-0.15, 0.14, 2.91],
+            "rot": [0.03, 0.02, 0.00, 1.00],
+            "fovy": 1.0
+            },
+    "camera2":{
+            "pos": [-0.01, 3.27, 0.06],
+            "rot": [0.70, 0.01, 0.01, 0.71],
+            "fovy": 1.0
+            }, 
+    "materials":{
+        "blue":{
+            "color":[0.0, 0.0, 1.0]
+        },
+        "purple":{
+            "color":[0.5, 0.0, 0.5]
+        }
+    },
+
+    "children": [
+        {
+            "transform": [2, 0, 0, -1, 
+                          0, 1, 0, 0,
+                          0, 0, 1, 0,
+                          0, 0, 0, 1],
+            "shapes": [
+                {
+                    "type": "cylinder",
+                    "radius": 0.2,
+                    "height": 2,
+                    "material": "purple"
+                }
+            ]
+        },
+        
+        {
+                "transform": [2, 0, 0, 1, 
+                              0, 1, 0, 0,
+                              0, 0, 1, 0,
+                              0, 0, 0, 1],
+                "shapes": [
+                    {
+                        "type": "cylinder",
+                        "radius": 0.2,
+                        "height": 2,
+                        "material": "purple"
+                    }
+                ]
+        },
+
+        {
+            "shapes": [
+                {
+                    "type": "box",
+                    "width": 2,
+                    "height": 0.25,
+                    "length": 0.5,
+                    "material": "blue"
+                }
+            ]
+        }
+    ]
+
+}

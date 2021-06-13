@@ -1,0 +1,90 @@
+{
+    "name": "giantpokemonscene",
+    "camera1":{
+        "pos": [-4.06, 2.26, -4.10],
+        "rot": [-0.01, 0.98, -0.04, 0.19],
+        "fovy": 1.0
+        },
+    "camera2":{
+        "pos": [-1.28, 1.30, 3.67],
+        "rot": [0.03, 0.96, 0.13, 0.24],
+        "fovy": 1.0
+            }, 
+    "light1":{
+        "pos":[0.00, 26.16, 0.00],
+        "color":[1, 1, 1]
+    },
+    "materials":{
+        "red":{
+            "color":[1.0, 0.0, 0.0]
+        },
+
+        "blue": {
+            "color": [0.0,0.0,1.0]
+        }
+    },
+
+    "children": [
+        {
+            "transform": [0.5,0,0,0,
+                          0,0.5,0,0,
+                          0,0,0.5,0,
+                          0,0,0,1],
+            "children": [
+                {
+                    "transform": [0,0,1,-15,
+                                  0,1,0,0,
+                                  -1,0,0,10,
+                                  0,0,0,1],
+                    "shapes": 
+                        [
+                            {
+                                "type": "mesh",
+                                "filename": "../meshes/Groudon.off",
+                                "material": "red"
+                            }
+                        ]
+                    
+                },
+                {
+                    "transform": [0,0,-1,15,
+                                  0,1,0,0,
+                                  1,0,0,10,
+                                  0,0,0,1],
+                    "shapes":
+                        [
+                            {
+                                "type": "mesh",
+                                "filename": "../meshes/Kyogre.off",
+                                "material": "blue"
+                            }
+                        ]
+                }
+            ]
+        },
+            
+        {
+            "transform": [0, 0, -1, 0,
+                            0, 1, 0, 0,
+                            1, 0, 0, 0,
+                            0, 0, 0, 1],
+            "children": 
+                [
+                    {
+                        "transform": [0.5, 0, 0, 0,
+                                    0, 0.5, 0, 0,
+                                    0, 0, 0.5, 0,
+                                    0, 0, 0, 1],
+                        "shapes": [
+
+                            {
+                                "type": "scene",
+                                "filename": "../Parker/pokemonbattle.json"
+                            }
+
+                        ]
+                    }
+                ]
+        }
+    ]
+}

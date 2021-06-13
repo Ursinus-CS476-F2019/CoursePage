@@ -16,3 +16,9 @@
 [submodule "Lectures/CelShading"]
 	path = Lectures/CelShading
 	url = https://github.com/Ursinus-CS476-F2019/CelShading.git
+[submodule "Assignments/Mini1_GeometricPrimitives/Mini1_GeometricPrimitives_Part1"]
+	path = Assignments/Mini1_GeometricPrimitives/Mini1_GeometricPrimitives_Part1
+	url = https://github.com/Ursinus-CS476-F2019/Mini1_GeometricPrimitives_Part1.git
+[submodule "Assignments/Mini1_GeometricPrimitives/Mini1_GeometricPrimitives_Part2"]
+	path = Assignments/Mini1_GeometricPrimitives/Mini1_GeometricPrimitives_Part2
+	url = https://github.com/Ursinus-CS476-F2019/Mini1_GeometricPrimitives_Part2.git

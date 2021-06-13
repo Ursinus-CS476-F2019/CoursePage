@@ -1,0 +1,57 @@
+{
+    "name":"testscene",
+    "camera1":{
+            "pos": [0.00, 1.50, 5.00],
+            "rot": [0.00, 0.00, 0.00, 1.00],
+            "fovy": 1.0
+            },
+    "camera2":{
+            "pos": [110.00, 1.50, -5.00],
+            "rot": [0.00, 1.00, 0.00, 0.00],
+            "fovy": 1.0
+            }, 
+    "materials":{
+        "green":{
+            "color":[0.0, 1.0, 0.0]
+        },
+        "blue":{
+            "color":[0.0, 0.0, 1.0]
+        }
+    },
+    
+    "children":[
+        {
+            "transform":[0.4, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 0.2, 0,
+                        0, 0, 0, 1],
+            "shapes":[
+                {
+                    "type":"cylinder",
+                    "radius":1,
+                    "height":2,
+                    "center":[-2.5, 0, 0],
+                    "material":"blue"
+                },
+                {
+                    "type":"cylinder",
+                    "radius":1,
+                    "height":2,
+                    "center":[2.5, 0, 0],
+                    "material":"blue"
+                }
+            ]   
+        },
+        {
+            "shapes":[
+                {
+                "type":"box",
+                "length":0.5,
+                "width":2,
+                "height":0.2,
+                "center":[0, 0, 0]
+                }
+            ]
+        }
+    ]
+}

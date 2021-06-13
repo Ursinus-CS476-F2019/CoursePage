@@ -1,0 +1,58 @@
+{
+  "cameras":[
+    {
+        "pos": [-28.04, 26.07, 23.7],
+        "rot": [0.2, 0.4, 0.09, 0.89],
+        "fovy": 1.0
+    },
+    {
+        "pos": [-1.16, 1.78, 2.23],
+        "rot": [0.28, 0.21, 0.06, 0.93],
+        "fovy": 1.0
+    },
+    {
+        "pos": [0.02, 0.59, 2.4],
+        "rot": [0.13, -0.01, -0.0, 0.99],
+        "fovy": 1.0
+    }
+  ],
+  "lights":[
+      {
+        "pos":[2, 4, 5]
+      }
+  ],
+
+  "materials": {
+    "green": {
+      "color": [0.0, 1.0, 0.0]
+    },
+    "red": {
+      "color": [1.0, 0.0, 0.0]
+    }
+  },
+
+  "children": [
+    {
+      "transform": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+      "shapes": [
+        {
+          "type": "scene",
+          "filename": "../scenes/sample-scene.json",
+          "material": "green"
+        }
+      ],
+      "children": [
+        {
+          "transform": [1, 0, 0, 0, 0, 1, 0, 20, 0, 0, 1, 0, 0, 0, 0, 1],
+          "shapes": [
+            {
+              "type": "scene",
+              "filename": "../scenes/sample-scene.json",
+              "material": "green"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
