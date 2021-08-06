@@ -31,3 +31,6 @@
 [submodule "Assignments/LargeScale2_3DShapeModeling"]
 	path = Assignments/LargeScale2_3DShapeModeling
 	url = https://github.com/Ursinus-CS476-F2019/LargeScale2_3DShapeModeling.git
+[submodule "FinalProject/Parker_Cristiano_Dalton/cs476_FinalProject"]
+	path = FinalProject/Parker_Cristiano_Dalton/cs476_FinalProject
+	url = https://github.com/Dalton098/cs476_FinalProject.git
